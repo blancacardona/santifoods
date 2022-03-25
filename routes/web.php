@@ -37,30 +37,41 @@ Route::get('/', function () {
     return view('plantilla.index');
 });
 
+// Route::get('/showcooking', 'StoreController@index');
+
+
 // Router Auth
 // Route::get('/login', 'ConnectController@getLogin')->name('login');
 
-Route::get('/recetas', 'StoreController@index');
+// Route::get('/recetas', 'StoreController@index');
 
-Route::get('recetas/{slug}',
-[
-    'as'   => 'product-details',
-    'uses' => 'StoreController@show'
-]);
+// Route::get('recetas/{slug}',
+// [
+//     'as'   => 'product-details',
+//     'uses' => 'StoreController@show'
+// ]);
 
-Route::get('categoria/{slug}',[
-    'uses' => 'StoreController@searchCategory',
-])->name('searchCategory');
+// Route::get('categoria/{slug}',[
+//     'uses' => 'StoreController@searchCategory',
+// ])->name('searchCategory');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/* GESTION*/
-Route::resource('usuarios','UserController')->middleware('auth')->middleware('auth');
-Route::resource('roles','RoleController')->middleware('auth')->middleware('auth');
+// /* GESTION*/
+// Route::resource('usuarios','UserController')->middleware('auth')->middleware('auth');
+// Route::resource('roles','RoleController')->middleware('auth')->middleware('auth');
 
-Route::resource('/Categoria', 'CategoriaController')->middleware('auth');
-Route::resource('/receta', 'RecetasController')->middleware('auth');
+// Route::resource('/Categoria', 'CategoriaController')->middleware('auth');
+// Route::resource('/receta', 'RecetasController')->middleware('auth');
 
-/*ADMIN*/
+// /*ADMIN*/
+
+// /*NEWSLETTER*/
+// Route::get('newsletter','NewsletterController@create');
+// Route::post('newsletter','NewsletterController@store');
+
+/*SHOWCOOKING*/
+Route::get('showcooking','ShowcookingController@create');
+Route::post('showcooking','ShowcookingController@store');
