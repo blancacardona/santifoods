@@ -8,14 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-
 <link rel="stylesheet" type="text/css" href="{{asset('asset/styles/bootstrap-4.1.2/bootstrap.min.css') }}">
 
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/plugins/font-awesome-4.7.0/css/font-awesome.min.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/plugins/OwlCarousel2-2.2.1/owl.carousel.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('asset/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('asset/plugins/OwlCarousel2-2.2.1/owl.theme.default.css') }}"> 
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/plugins/OwlCarousel2-2.2.1/animate.css') }}">
-
 
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/styles/main_styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/styles/responsive.css') }}">
@@ -38,14 +36,14 @@
 	<!-- Navigation -->
 	<div class="menu_nav">
 		<ul>
-			<li><a href="#">Inicio</a></li>
-			<li><a href="#">Clases</a></li>
-			<li><a href="#">Recetas</a></li>
-            <li><a href="#">Restaurantes</a></li>
-            <li><a href="#">Eventos</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#">Sobre mi</a></li>
-			
+			<li><a href="{{ url('/')}}">Inicio</a></li>
+			<li><a href="{{ url('/recetas')}}">Recetas</a></li>
+			<li><a href="{{ url('/showcooking')}}">Showcooking</a></li>
+            <li><a href="{{ url('/blog')}}">Blog</a></li>
+			<li><a href="{{ url('/santifoods')}}">Santifoods</a></li>
+            <li><a href="{{ url('/contacto')}}">Contacto</a></li>
+			<li><a href="{{ url('/clases')}}">Clases</a></li>
+            
 		</ul>
 	</div>
 	<!-- Contact Info -->
@@ -81,13 +79,13 @@
 			<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
 			<nav class="main_nav">
 				<ul class="d-flex flex-row align-items-start justify-content-start">
-					<li class="active"><a href="#">Inicio</a></li>
-					<li><a href="#">Clases</a></li>
-					<li><a href="#">Recetas</a></li>
-                    <li><a href="#">Restaurantes</a></li>
-                    <li><a href="#">Eventos</a></li>
-                    <li><a href="#">Contacto</a></li>
-                    <li><a href="#">Sobre mi</a></li>					
+					<li><a href="{{ url('/')}}">Inicio</a></li>
+					<li><a href="{{ url('/recetas')}}">Recetas</a></li>
+					<li><a href="{{ url('/showcooking')}}">Showcooking</a></li>
+					<li><a href="{{ url('/blog')}}">Blog</a></li>
+					<li><a href="{{ url('/santifoods')}}">Santifoods</a></li>
+					<li><a href="{{ url('/contacto')}}">Contacto</a></li>
+					<li><a href="{{ url('/clases')}}">Clases</a></li>			
 				</ul>
 			</nav>
 			<div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
@@ -105,46 +103,50 @@
 
 		<footer class="footer">
 			<div class="footer_content">
-				<div class="container">
-					<div class="row">
 
-						<!-- Footer Links -->
-
-						<!-- Footer Contact -->
-						<div class="col-lg-4 footer_col">
-							<div class="footer_contact">
-								<div class="footer_title">Suscríbete a mi newsletter</div>
-								<div class="newsletter">
-									<form action="#" id="newsletter_form" class="newsletter_form">
-										<input type="email" class="newsletter_input" placeholder="Suscríbete a nuestro boletín" required="required">
-										<button class="newsletter_button">+</button>
-									</form>
-								</div>
-								<div class="footer_social">
-									<div class="footer_title">Social</div>
-									<ul class="footer_social_list d-flex flex-row align-items-start justify-content-start">
-										<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-										<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-									</ul>
-								</div>
+				<div class="footer_newsletter">
+					@if (\Session::has('success'))
+						<div class="alert alert-success">
+						<p>{{ \Session::get('success') }}</p>
+						</div><br />
+						@endif
+						@if (\Session::has('failure'))
+						<div class="alert alert-danger">
+						<p>{{ \Session::get('failure') }}</p>
+						</div><br />
+						@endif
+						<div class="footer_title">Suscríbete para no perderte nada</div>
+						<form method="post" action="{{url('newsletter')}}">
+						@csrf
+						</div>
+						<div class="row">
+							<div class="col-md-4"></div>
+							<div class="newsletter_form">
+								<input type="text" class="newsletter_input" placeholder="Escribe tu email*" name="email">
+								<button type="submit" class="newsletter_button">Suscribirse</button>
 							</div>
 						</div>
-					</div>
+						</form>
 				</div>
-			</div>
-			<div class="footer_bar">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="footer_bar_content d-flex flex-md-row flex-column align-items-center justify-content-start">
-								<div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
-								</div>
-							</div>
+
+
+				<div class="footer_social">
+					{{-- <div class="footer_title">Social</div> --}}
+					<ul class="footer_social_list">
+						<div class="template-demo"> 
+							<button type="button" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></button> 
+							<button type="button" class="btn btn-social-icon btn-tiktok"><i class="bi bi-tiktok"></i></button> 
+							<button type="button" class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></button> 
 						</div>
-					</div>
+						
+					</ul>
 				</div>
-			</div>
+			
+				<div class="footer_copyright">
+					<div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+	Copyright &copy;<script>document.write(new Date().getFullYear());</script>  SANTIFOODS
+									</div>
+								</div>
 		</footer>
 	</div>
 		
