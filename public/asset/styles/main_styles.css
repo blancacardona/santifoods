@@ -140,15 +140,7 @@ h1, h2, h3, h4, h5, h6
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	line-height: 1.2;
 }
-h1::selection, 
-h2::selection, 
-h3::selection, 
-h4::selection, 
-h5::selection, 
-h6::selection
-{
-	
-}
+
 img
 {
 	max-width: 100%;
@@ -647,18 +639,7 @@ section
 	left: 40px;
 	bottom: 25px;
 }
-.menu_phone > div:first-child > div
-{
-	width: 18px;
-	height: 18px;
-}
-.menu_phone > div:last-child
-{
-	font-size: 14px;
-	font-weight: 700;
-	color: #4a4a4a;
-	padding-left: 16px;
-}
+
 .menu_social
 {
 	margin-top: 20px;
@@ -1138,8 +1119,20 @@ section
 .form-control{
 	width: 400px;
 }
-
-
+.form_title{
+	font-size: 30px;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+.form_subtitle{
+	text-align: center;
+	margin-left: 150px;
+	margin-right: 150px;
+}
+.carouselExampleIndicators{
+	
+}
 .products
 {
 	background: #FFFFFF;

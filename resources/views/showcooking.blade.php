@@ -29,13 +29,16 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="asset/images/0042txokojaieneahd.jpg" class="d-block w-100" alt="...">
+            <img src="asset/images/0042txokojaieneahd.jpg" class="d-block w-100" height="750px">
           </div>
           <div class="carousel-item">
-            <img src="asset/images/0026txokojaieneahd.jpg" class="d-block w-100" alt="...">
+            <img src="asset/images/0026txokojaieneahd1.jpg" class="d-block w-100" height="750px">
           </div>
           <div class="carousel-item">
-            <img src="asset/images/0019txokojaieneahd.jpg" class="d-block w-100" alt="...">
+            <img src="asset/images/0019txokojaieneahd.jpg" class="d-block w-100" height="750px">
+          </div>
+          <div class="carousel-item">
+            <img src="asset/images/0052txokojaieneahd.jpg" class="d-block w-100" height="750px">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

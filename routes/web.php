@@ -36,9 +36,9 @@ Route::get('/', function () {
     // return view('plantilla.plantilla');
     return view('index');
 });
-Route::get('/showcooking', function () {
-    return view('showcooking');
-});
+// Route::get('/showcooking', function () {
+//     return view('showcooking');
+// });
 
 // Router Auth
 // Route::get('/login', 'ConnectController@getLogin')->name('login');
@@ -73,5 +73,5 @@ Route::get('/showcooking', function () {
 // Route::post('newsletter','NewsletterController@store');
 
 /*SHOWCOOKING*/
-// Route::get('showcooking','ShowcookingController@create');
-// Route::post('showcooking','ShowcookingController@store');
+Route::get('showcooking','ShowcookingController@create');
+Route::post('showcooking','ShowcookingController@store');
