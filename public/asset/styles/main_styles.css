@@ -38,8 +38,8 @@
 	margin: 0;
 	padding: 0;
 	-webkit-font-smoothing: antialiased;
-	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
-	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	/* -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px; */
 }
 body
 {
@@ -70,8 +70,8 @@ p
 	font-weight: 300;
 	color: #969696;
 	-webkit-font-smoothing: antialiased;
-	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
-	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	/* -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px; */
 }
 p a
 {
@@ -101,8 +101,8 @@ a, a:hover, a:visited, a:active, a:link
 {
 	text-decoration: none;
 	-webkit-font-smoothing: antialiased;
-	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
-	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	/* -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px; */
 }
 p a:active
 {
@@ -136,8 +136,8 @@ h1, h2, h3, h4, h5, h6
 {
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	-webkit-font-smoothing: antialiased;
-	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
-	text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	/* -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px; */
 	line-height: 1.2;
 }
 
@@ -1227,6 +1227,37 @@ section
 {
 	color: #2fce98;
 }
+
+/*********************************
+7. Santifoods
+*********************************/
+.santifoods{
+	/* padding-left: 250px;
+	padding-right: 250px; */
+	padding-bottom: 250px;
+	padding-top: 150px;
+	/* display: flex;
+	align-content: center; */
+	
+}
+.nombre-santifoods{
+	font-weight: bold;
+	font-size: 30px;
+}
+.foto-santifoods{
+	float: left;
+	padding-right: 50px;
+	padding-left: 100px;
+}
+.descripcion-santi{
+	float: right ;
+	padding-right: 200px;
+	
+
+}
+
+
+
 
 /*********************************
 7. Boxes

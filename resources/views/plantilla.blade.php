@@ -127,11 +127,12 @@
 						<div class="row">
 							<div class="col-md-4"></div>
 							<div class="newsletter_form">
-								<input type="text" class="newsletter_input" placeholder="Escribe tu email*" name="email">
+								<input type="text" class="newsletter-input" placeholder="Escribe tu email*" name="email">
 								<button type="submit" class="newsletter_button">Suscribirse</button>
 							</div>
 						</div>
 						</form>
+						<br><br>
 				</div>
 		
 

@@ -21,8 +21,9 @@ p
 	text-align: center;
 	align-content: center;
 	/* background-color: #F6E6BA; */
-	padding: 100px;
-	background-color: lightgrey;
+	padding: 80px;
+	background-color: #FBF6E6;
+	margin-top: 40px;
 	
 
 }
@@ -35,17 +36,19 @@ p
 	margin-top: 30px;
 }
 
-.newsletter_input
+.newsletter-input
 {
 	margin-top: 30px;
 	width: 400px;
 	height: 40px;
 	background: #FFFFFF;
 	padding-left: 28px;
-	border-color: lightgrey;
-	outline: none;
-	color: #4a4a4a;
+	/* border-color: white;
+	color: #4a4a4a; */
+	border-width: 3px;
+	border-color: white;
 	border-radius: 10px;
+
 	
 }
 .newsletter_button

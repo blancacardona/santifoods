@@ -81,7 +81,7 @@
           <br>
           <div class="mb-3">
             {{-- <label for="exampleFormControlInput1" class="form-label"></label> --}}
-            <button type="submit" class="btn btn-success" style="background: #2fce98; border: none;">Enviar</button>
+            <button type="submit" class="btn btn-success" style="background: black; border: none;">Enviar</button>
           </div>
       </div>
       
