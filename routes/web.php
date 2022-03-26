@@ -75,3 +75,8 @@ Route::get('/', function () {
 /*SHOWCOOKING*/
 Route::get('showcooking','ShowcookingController@create');
 Route::post('showcooking','ShowcookingController@store');
+
+/*SANTIFOODS*/
+Route::get('santifoods', function () {
+    return view('santifoods'); 
+});
