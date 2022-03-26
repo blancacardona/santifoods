@@ -1116,9 +1116,7 @@ section
 6. Showcooking
 *********************************/
 
-.form-control{
-	width: 400px;
-}
+
 .form_title{
 	font-size: 30px;
 	text-align: center;
@@ -1130,9 +1128,25 @@ section
 	margin-left: 150px;
 	margin-right: 150px;
 }
-.carouselExampleIndicators{
-	
+.form{
+	width:500px;
+	padding:30px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin:auto;
+	/* background-color:#ccc; */
 }
+.form-label{
+	width:100px;
+	font-weight:bold;
+	display:inline-block;
+}
+.mb-3{
+	position: relative;
+}
+
+
 .products
 {
 	background: #FFFFFF;

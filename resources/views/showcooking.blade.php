@@ -51,22 +51,53 @@
         </button>
       </div>
 
-
-      {{-- <div class="carrousel">
-        <div class="adelante flechas">
-          &#62
-        </div>
-        <div class="atras flechas">
-          &#60
-        </div>
-        <img src="asset/images/0042txokojaieneahd.jpg" alt="" id="imagen">
-      </div>
-      <script src="js/carrousel.js"><\script> --}}
       <div class="form_title">¿Quieres ser todo un chef?</div>
       <div class="form_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 
       <br /><br />
-      <div class="row">
+
+      <div class="form">
+
+          <div class="mb-3">
+            <label for="formInput1" class="form-label">Nombre</label>
+            <input type="name" class="form-control" placeholder="" width="40px">
+          </div>
+          <div class="mb-3">
+            <label for="formInput2" class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="formInput3" class="form-label">Descripción</label>
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="formInput4" class="form-label">Nº personas</label>
+            <input type="email" class="form-control">
+          </div>
+          <div class="mb-3">
+            <label for="formInput5" class="form-label">Fecha</label>
+            <input type="email" class="form-control" placeholder="dd/mm/yyyy">
+          </div>
+          <br>
+          <div class="mb-3">
+            {{-- <label for="exampleFormControlInput1" class="form-label"></label> --}}
+            <button type="submit" class="btn btn-success" style="background: #2fce98; border: none;">Enviar</button>
+          </div>
+      </div>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+      {{-- <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-2">
               <label for="Nombre">Nombre:</label>
@@ -106,7 +137,7 @@
           <div class="form-group col-md-4">
             <button type="submit" class="btn btn-success" style="background: #2fce98; border: none;">Enviar</button>
           </div>
-      </div>
+      </div> --}}
           
     </form>
 
