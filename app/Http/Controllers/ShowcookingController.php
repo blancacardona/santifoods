@@ -14,9 +14,9 @@ class ShowcookingController extends Controller
 
     public function store(Request $request)
     {
-        if ( ! Showcooking::isSubscribed($request->nombre) ) 
+        if ( ! Newsletter::isSubscribed($request->nombre) ) 
         {
-            Showcooking::subscribePending($request->nombre);
+            Newsletter::subscribePending($request->nombre);
             // Showcooking::subscribePending($request->nombre);
             // Showcooking::subscribePending($request->apellidos);
             // Showcooking::subscribePending($request->correo);

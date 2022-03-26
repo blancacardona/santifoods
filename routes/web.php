@@ -34,11 +34,11 @@ Route::get('/', function () {
     // $cat = Category::find(3)->recipes;
     // return $cat;
     // return view('plantilla.plantilla');
-    return view('plantilla.index');
+    return view('index');
 });
-
-// Route::get('/showcooking', 'StoreController@index');
-
+Route::get('/showcooking', function () {
+    return view('showcooking');
+});
 
 // Router Auth
 // Route::get('/login', 'ConnectController@getLogin')->name('login');
@@ -73,5 +73,5 @@ Route::get('/', function () {
 // Route::post('newsletter','NewsletterController@store');
 
 /*SHOWCOOKING*/
-Route::get('showcooking','ShowcookingController@create');
-Route::post('showcooking','ShowcookingController@store');
+// Route::get('showcooking','ShowcookingController@create');
+// Route::post('showcooking','ShowcookingController@store');
