@@ -21,13 +21,13 @@
 /***********
 1. Fonts
 ***********/
-
+/* 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
 @font-face
 {
 	font-family: 'Futura';
 	src: url('../fonts/FuturaLT-Book.ttf')  format('truetype');
-}
+} */
 
 /*********************************
 2. Body and some general stuff
@@ -43,7 +43,7 @@
 }
 body
 {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	background: #FFFFFF;
@@ -64,7 +64,7 @@ ul
 }
 p
 {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
 	font-weight: 300;
@@ -134,7 +134,7 @@ h4{font-size: 18px;}
 h5{font-size: 14px;}
 h1, h2, h3, h4, h5, h6
 {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px;
@@ -370,10 +370,7 @@ section
 	padding-left: 20px;
 	padding-right: 42px;
 }
-.header.scrolled
-{
-	box-shadow: 0px 5px 15px rgba(0,0,0,0.08);
-}
+
 .logo a > div > div:last-child
 {
 	padding-left: 15px;
