@@ -1,7 +1,7 @@
 <?php
 
-// use App\Models\Recipe;
-// use App\Models\Category;
+use App\Models\Recipe;
+use App\Models\Category;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -21,24 +21,31 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     // $rec = new Recipe();
-    // $rec->nombre = 'GUISO DE LENTEJAS';
-    // $rec->slug = 'GUISO DE LENTEJAS';
-    // $rec->category_id = 3;
-    // $rec->ingredientes = 'lentejas';
-    // $rec->elaboracion = 'lentejas';
+    // $rec->nombre = 'ÁRBOL DE FERRERO ROCHER';
+    // $rec->slug = 'ÁRBOL DE FERRERO ROCHER';
+    // $rec->descripcion = 'La receta de esta Navidad por excelencia, es súper fácil y te dejará sin palabras al probarlo.';
+    // $rec->tiempo = '01:30';
+    // $rec->raciones = 8;
+    // $rec->ingredientes = 'Caja de Ferrero, 1 masa de hojaldre, 1 huevo, 1 cucharada de leche condensada';
+    // $rec->elaboracion = '1.-Precalentamos el horno a 180 grados, con ventilación y calor arriba y abajo.
+    //                     2.- Colocamos la masa en una bandeja de horno, hacemos cortes verticales y horizontales.
+    //                     3.- Haciendo cuadrados encima colocamos los bombones y cerramos uno a uno con mucho cuidado.
+    //                     4.- Hacemos la forma del árbol y pintamos con el huevo batido.
+    //                     5.- Metemos al horno hasta que veamos el hojaldre dorado.
+    //                     6.- Añadimos la leche condensada por encima y disfrutamos.
+    //                     7.- Qué nadie se libre de probar este manjar estas navidades con tu familia o amigos ❤️
+    
+    //                     “Una Navidad en familia, llena de ilusión y magia” 🎄✨';
+    // $rec->category_id = 1;
+    // $rec->principal = 'Si';
     // $rec->save();
     // return $rec;
 
-    // return view('inicio');
+   
 
-    // $cat = Category::find(3)->recipes;
-    // return $cat;
-    // return view('plantilla.plantilla');
     return view('index');
 });
-// Route::get('/showcooking', function () {
-//     return view('showcooking');
-// });
+
 
 // Router Auth
 // Route::get('/login', 'ConnectController@getLogin')->name('login');
