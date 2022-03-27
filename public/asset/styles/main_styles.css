@@ -1247,13 +1247,14 @@ section
 .foto-santifoods{
 	float: left;
 	padding-right: 50px;
-	padding-left: 100px;
+	padding-left: 80px;
+	
 }
 .descripcion-santi{
 	float: right ;
-	padding-right: 200px;
-	
-
+}
+.texto-santifoods{
+	padding-right: 150px;
 }
 
 
