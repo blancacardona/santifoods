@@ -2,10 +2,6 @@
 
 namespace App\Http\Controllers;
 
-// use App\Models\Clientes;
-use App\Models\Recetas;
-// use App\Models\publicofert;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,10 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $cons_user = User::count();
-        // $cons_ofertas = publicofert::count();
-        $cons_recetas = Recetas::count();
-        // $cons_clientes = Clientes::count();
-        return view('home',compact('cons_user','cons_recetas'));
+        return view('home');
     }
 }

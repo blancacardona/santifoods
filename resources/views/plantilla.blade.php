@@ -31,38 +31,42 @@
 
 <div class="menu">
 
-	<!-- Search -->
-	<div class="menu_search">
-		<form action="#" id="menu_search_form" class="menu_search_form">
-			<input type="text" class="search_input" placeholder="Search Item" required="required">
-			<button class="menu_search_button"><img src="http://localhost:8000/asset/images/search.png" alt=""></button>
-		</form>
-	</div>
 	<!-- Navigation -->
-	<div class="menu_nav">
+	<ul class="nav justify-content-center">
+		<li class="nav-item"><a href="{{ url('/')}}">Inicio</a></li>
+		<li class="nav-item"><a href="{{ url('/recetas')}}">Recetas</a></li>
+		<li class="nav-item"><a href="{{ url('/cocinamos')}}">Cocinamos</a></li>
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="{{ url('/cocinamos')}}" role="button" aria-expanded="false">Cocinamos</a>
+			<ul class="dropdown-menu">
+			  <li><a class="dropdown-item" href="{{ url('/cocinamos/showcooking')}}">Showcooking</a></li>
+			  <li><a class="dropdown-item" href="{{ url('/cocinamos/teambuilding')}}">Team building</a></li>
+			  <li><a class="dropdown-item" href="{{ url('/cocinamos/chefencasa')}}">Chef en casa</a></li>
+			</ul>
+		  </li>
+		<li class="nav-item"><a href="{{ url('/blog')}}">Blog</a></li>
+		<li class="nav-item"><a href="{{ url('/sobremi')}}">Sobre mi</a></li>
+		<li class="nav-item"><a href="{{ url('/contacto')}}">Contacto</a></li>
+	  </ul>
+
+	{{-- <div class="menu_nav">
 		<ul>
 			<li><a href="{{ url('/')}}">Inicio</a></li>
 			<li><a href="{{ url('/recetas')}}">Recetas</a></li>
-			<li><a href="{{ url('/showcooking')}}">Showcooking</a></li>
+			<li><a href="{{ url('/cocinamos')}}">Cocinamos</a></li>
             <li><a href="{{ url('/blog')}}">Blog</a></li>
-			<li><a href="{{ url('/santifoods')}}">Santifoods</a></li>
+			<li><a href="{{ url('/sobremi')}}">Sobre mi</a></li>
             <li><a href="{{ url('/contacto')}}">Contacto</a></li>
-			<li><a href="{{ url('/clases')}}">Clases</a></li>
             
 		</ul>
-	</div>
-	<!-- Contact Info -->
+	</div> --}}
+
 	<div class="menu_contact">
 		<div class="menu_phone d-flex flex-row align-items-center justify-content-start">
-			<div><div><img src="http://localhost:8000/asset/images/phone.svg" alt="https://www.flaticon.com/authors/freepik"></div></div>
-			<div>+1 912-252-7350</div>
+			{{-- <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> --}}
+			<button type="button" class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></button> 
 		</div>
-		<div class="menu_social">
-			<ul class="menu_social_list d-flex flex-row align-items-start justify-content-start">
-				<li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-				<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-			</ul>
-		</div>
+		
 	</div>
 </div>
 
@@ -86,19 +90,12 @@
 				<ul class="d-flex flex-row align-items-start justify-content-start">
 					<li><a href="{{ url('/')}}">Inicio</a></li>
 					<li><a href="{{ url('/recetas')}}">Recetas</a></li>
-					<li><a href="{{ url('/showcooking')}}">Showcooking</a></li>
+					<li><a href="{{ url('/cocinamos')}}">Cocinamos</a></li>
 					<li><a href="{{ url('/blog')}}">Blog</a></li>
-					<li><a href="{{ url('/santifoods')}}">Santifoods</a></li>
-					<li><a href="{{ url('/contacto')}}">Contacto</a></li>
-					<li><a href="{{ url('/clases')}}">Clases</a></li>			
+					<li><a href="{{ url('/sobremi')}}">Sobre mi</a></li>
+					<li><a href="{{ url('/contacto')}}">Contacto</a></li>		
 				</ul>
 			</nav>
-			<div class="header_right d-flex flex-row align-items-center justify-content-start ml-auto">
-				
-				<!-- Cart -->
-				<div class="cart"><a href="cart.html"><div><img class="svg" src="http://localhost:8000/asset/images/cart.svg" alt="https://www.flaticon.com/authors/freepik"><div>1</div></div></a></div>
-				</div>
-			</div>
 		</div>
 	</header>
 
@@ -120,14 +117,14 @@
 						<p>{{ \Session::get('failure') }}</p>
 						</div><br />
 						@endif
-						<div class="footer_title">Suscríbete para no perderte nada</div>
+						<div class="footer_title">¡Suscríbete para cocinar más!</div>
 						<form method="post" action="{{url('newsletter')}}">
 						@csrf
 						</div>
 						<div class="row">
 							<div class="col-md-4"></div>
 							<div class="newsletter_form">
-								<input type="text" class="newsletter-input" placeholder="Escribe tu email*" name="email">
+								<input type="text" class="newsletter-input" placeholder="Correo*" name="email">
 								<button type="submit" class="newsletter_button">Suscribirse</button>
 							</div>
 						</div>
@@ -141,8 +138,10 @@
 					{{-- <div class="footer_title">Social</div> --}}
 					<ul class="footer_social_list">
 						<div class="template-demo"> 
-							<button type="button" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></button> 
-							<button type="button" class="btn btn-social-icon btn-tiktok"><i class="bi bi-tiktok"></i></button> 
+							<div class="correo-santifoods">santifood11@gmail.com</div>
+							<a href="{{ url('/sobremi')}}" class="link-sobremi" style="color: black">
+								Sobre mi
+							<br><br>
 							<button type="button" class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></button> 
 						</div>
 						

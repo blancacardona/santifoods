@@ -43,7 +43,7 @@
 }
 body
 {
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: 'Courier New', Courier, monospace;
 	font-size: 14px;
 	font-weight: 400;
 	background: #FFFFFF;
@@ -64,7 +64,7 @@ ul
 }
 p
 {
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: 'Courier New', Courier, monospace;
 	font-size: 16px;
 	line-height: 1.5;
 	font-weight: 300;
@@ -134,7 +134,7 @@ h4{font-size: 18px;}
 h5{font-size: 14px;}
 h1, h2, h3, h4, h5, h6
 {
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-family: 'Courier New', Courier, monospace;
 	-webkit-font-smoothing: antialiased;
 	/* -webkit-text-shadow: rgba(0,0,0,.01) 0 0 1px;
 	text-shadow: rgba(0,0,0,.01) 0 0 1px; */
@@ -739,10 +739,13 @@ section
 }
 .home_container
 {
-	width: 100%;
+	/* width: 100%;
 	height: 100%;
-	padding-top: 200px; 
-	/*padding-top: 73px; */
+	padding-top: 200px;  */
+	position: relative;
+    display: inline-block;
+    text-align: center;
+	
 }
 .home_content
 {
@@ -764,6 +767,7 @@ section
 	text-align: center;
 	line-height: 1.2;
 	margin-top: -3px;
+	
 }
 .home_items
 {
@@ -886,7 +890,7 @@ section
 }
 .rating_r i::before
 {
-	font-family: 'FontAwesome';
+	font-family: 'Courier New', Courier, monospace;
 	content: "\f006";
 	font-style: normal;
 	font-size: 16px;
@@ -1116,32 +1120,84 @@ section
 6. Showcooking
 *********************************/
 
+.cocinamos-title{
+	font-size: 50px;
+	padding-top: 130px;
+	padding-bottom: 40px;
+	text-align: center;
+}
+.cocinamos-descripcion{
+	text-align: center;
+	padding-left: 130px;
+	padding-right: 130px;
+}
+.cocinamos-container-image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	filter: brightness(0.5);
+}
+.cocinamos-container{
+	display: flex;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
 
-.form_title{
+.cocinamos-container1{
+	padding: 100px;
+	position: relative;
+  	width: 50%;
+	text-align: center;
+	border-style:solid;
+  	border-width:1px;
+  	border-color:white;	
+	margin-right: 50px;	
+}
+
+
+.cocinamos-container1-title{
+	text-align: center;
+	color: white;
+}
+
+/* .form_title{
 	font-size: 30px;
 	text-align: center;
-	padding-top: 30px;
+	padding-top: 130px;
 	padding-bottom: 30px;
 }
 .form_subtitle{
 	text-align: center;
-	margin-left: 150px;
-	margin-right: 150px;
-}
+	margin-left: 20%;
+	margin-right: 20%;
+} */
 .form{
-	width:500px;
+	width: 70%;
 	padding:30px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: black;
 	margin:auto;
 	/* background-color:#ccc; */
 }
 .form-label{
 	width:100px;
 	font-weight:bold;
+	color: #514623;
 	display:inline-block;
 }
+.teambuilding-image{
+	display: block;
+	width: 800px;
+	height: 500px;
+	margin: auto;
+	padding-bottom: 100px;
+}
+
 .mb-3{
 	position: relative;
 }
@@ -1229,32 +1285,44 @@ section
 }
 
 /*********************************
-7. Santifoods
+7. Sobre mi
 *********************************/
-.santifoods{
+.sobremi{
+	display: flex;
+	padding-top: 100px;
 	/* padding-left: 250px;
 	padding-right: 250px; */
-	padding-bottom: 250px;
-	padding-top: 150px;
 	/* display: flex;
 	align-content: center; */
 	
 }
-.nombre-santifoods{
+.nombre-sobremi{
 	font-weight: bold;
-	font-size: 30px;
+	font-size: 40px;
+	padding-bottom: 50px;
 }
-.foto-santifoods{
+.foto-sobremi{
 	float: left;
-	padding-right: 50px;
-	padding-left: 80px;
+	width: 150%;
+	height: 60%;
 	
 }
-.descripcion-santi{
+.descripcion-sobremi{
 	float: right ;
+	padding-left: 120px;
 }
-.texto-santifoods{
-	padding-right: 150px;
+.texto-sobremi{
+	padding-right: 170px;
+}
+.foto2-sobremi{
+	float: right;
+	width: 180%;
+	height: 60%;
+	
+}
+.descripcion2-sobremi{
+	float: left ;
+	padding-left: 120px;
 }
 
 

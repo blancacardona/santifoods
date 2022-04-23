@@ -15,56 +15,15 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*NAVBAR*/
-// Route::get('/', 'PublicofertController@ofertas');
-
 
 Route::get('/', function () {
-    // $rec = new Recipe();
-    // $rec->nombre = 'ÁRBOL DE FERRERO ROCHER';
-    // $rec->slug = 'ÁRBOL DE FERRERO ROCHER';
-    // $rec->descripcion = 'La receta de esta Navidad por excelencia, es súper fácil y te dejará sin palabras al probarlo.';
-    // $rec->tiempo = '01:30';
-    // $rec->raciones = 8;
-    // $rec->ingredientes = 'Caja de Ferrero, 1 masa de hojaldre, 1 huevo, 1 cucharada de leche condensada';
-    // $rec->elaboracion = '1.-Precalentamos el horno a 180 grados, con ventilación y calor arriba y abajo.
-    //                     2.- Colocamos la masa en una bandeja de horno, hacemos cortes verticales y horizontales.
-    //                     3.- Haciendo cuadrados encima colocamos los bombones y cerramos uno a uno con mucho cuidado.
-    //                     4.- Hacemos la forma del árbol y pintamos con el huevo batido.
-    //                     5.- Metemos al horno hasta que veamos el hojaldre dorado.
-    //                     6.- Añadimos la leche condensada por encima y disfrutamos.
-    //                     7.- Qué nadie se libre de probar este manjar estas navidades con tu familia o amigos ❤️
-    
-    //                     “Una Navidad en familia, llena de ilusión y magia” 🎄✨';
-    // $rec->category_id = 1;
-    // $rec->principal = 'Si';
-    // $rec->save();
-    // return $rec;
-
-   
-
     return view('index');
 });
-
 
 // Router Auth
 // Route::get('/login', 'ConnectController@getLogin')->name('login');
 
-// Route::get('/recetas', 'StoreController@index');
-
-// Route::get('recetas/{slug}',
-// [
-//     'as'   => 'product-details',
-//     'uses' => 'StoreController@show'
-// ]);
-
-// Route::get('categoria/{slug}',[
-//     'uses' => 'StoreController@searchCategory',
-// ])->name('searchCategory');
-
 // Auth::routes();
-
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // /* GESTION*/
 // Route::resource('usuarios','UserController')->middleware('auth')->middleware('auth');
@@ -80,10 +39,45 @@ Route::get('/', function () {
 // Route::post('newsletter','NewsletterController@store');
 
 /*SHOWCOOKING*/
-Route::get('showcooking','ShowcookingController@create');
-Route::post('showcooking','ShowcookingController@store');
+// Route::get('cocinamos','ShowcookingController@create');
+// Route::post('cocinamos','ShowcookingController@store');
+
+Route::get('/cocinamos', function () {
+    return view('cocinamos'); 
+});
+
+Route::get('/cocinamos/showcooking','ShowcookingController@create');
+Route::post('/cocinamos/showcooking','ShowcookingController@store');
+
+// Route::get('/cocinamos/showcooking', function () {
+//     return view('showcooking'); 
+// });
+Route::get('/cocinamos/teambuilding', function () {
+    return view('teambuilding'); 
+});
+Route::get('/cocinamos/chefencasa', function () {
+    return view('chefencasa'); 
+});
 
 /*SANTIFOODS*/
-Route::get('santifoods', function () {
-    return view('santifoods'); 
+Route::get('/sobremi', function () {
+    return view('sobremi'); 
 });
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+Route::resource('admin/category', 'Admin\AdminCategoryController')->names('admin.category');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
