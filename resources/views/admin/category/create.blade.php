@@ -30,8 +30,6 @@
           </div>
         </div>
         <div class="card-body">
-              Hola
-                
                     
                     <div class="form-group">
                         <label for="nombre">Nombre</label>

@@ -14,6 +14,7 @@
 
         <!-- /.row -->
         <div class="row">
+          @include('custom.modal_eliminar')
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
@@ -55,19 +56,15 @@
                                 <td> {{$categoria->created_at }} </td>
                                 <td> {{$categoria->updated_at }} </td>
 
-                                {{-- @can('haveaccess','category.show') --}}
-                                <td> <a class="btn btn-default href="{{ route('admin.category.show',$categoria->slug) }}">Ver</a>
+                                <td><a class="btn btn-default"
+                                   href="{{route('admin.category.show', $categoria->slug) }}">Ver</a>
                                 </td>
-                                {{-- @endcan --}}
-                                {{-- @can('haveaccess','category.edit') --}}
-                                <td> <a class="btn btn-info" href="{{ route('admin.category.edit',$categoria->slug) }}">Editar</a>
-                                </td>
-                                {{-- @endcan --}}
-                                {{-- @can('haveaccess','category.destroy') --}}
-                                <td> <a class="btn btn-danger" href="{{ route('admin.category.index') }}" v-on:click.prevent="deseas_eliminar({{$categoria->id}})">Eliminar</a>
-                                </td>
-                                {{-- @endcan --}}
-
+                                <td><a class="btn btn-info"
+                                  href="{{route('admin.category.edit', $categoria->slug) }}">Editar</a>
+                               </td>
+                               <td><a class="btn btn-danger"
+                                href="{{route('admin.category.index') }}" data-bs-toggle="modal" data-bs-target="#modal_eliminar">Eliminar</a>
+                             </td>
                             </tr>
                         @endforeach
 
