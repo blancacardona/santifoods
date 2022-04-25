@@ -25,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -36,13 +36,8 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        // $cat = new Category();
-        // $cat->nombre = $request->nombre;
-        // $cat->slug = $request->slug;
-        // $cat->save();
-
-        // return $cat;
         
+       
     }
 
     /**
@@ -64,7 +59,8 @@ class AdminController extends Controller
      */
     public function edit($slug)
     {
-        //
+        
+        
     }
 
     /**
@@ -76,7 +72,8 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+      
     }
 
     /**

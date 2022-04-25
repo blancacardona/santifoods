@@ -5,6 +5,7 @@ use App\Models\Category;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Admin\AdminCategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,9 +67,16 @@ Route::get('/sobremi', function () {
 
 Route::get('/admin', function () {
     return view('admin');
-});
+})->name('admin');
 
-Route::resource('admin/category', 'Admin\AdminCategoryController')->names('admin.category');
+Route::resource('admin/category', AdminCategoryController::class)->names('admin.category');
+
+
+// Route::get('/admin', function () {
+//     return view('admin');
+// })->name('admin');
+
+Route::resource('admin/category', AdminCategoryController::class)->names('admin.category');
 
 Auth::routes();
 
