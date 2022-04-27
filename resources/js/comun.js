@@ -22,9 +22,5 @@ if (document.getElementById('apirecipe')) {
 }
 
 if (document.getElementById('confirmareliminar')) {
-    require('./admin/confirmareliminar');
-}
-
-if (document.getElementById('api_search_autocomplete')) {
-    require('./admin/api_search_autocomplete');
+    require('./confirmareliminar');
 }

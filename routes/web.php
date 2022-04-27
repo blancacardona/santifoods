@@ -71,37 +71,8 @@ Route::get('/admin', function () {
 
 Route::resource('admin/category', AdminCategoryController::class)->names('admin.category');
 
-
-// Route::get('/admin', function () {
-//     return view('admin');
-// })->name('admin');
-
-Route::resource('admin/category', AdminCategoryController::class)->names('admin.category');
-
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
 Route::get('cancelar/{ruta}', function($ruta) {
     return redirect()->route($ruta)->with('cancelar','Acción Cancelada!');
 })->name('cancelar');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

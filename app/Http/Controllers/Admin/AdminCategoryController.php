@@ -9,23 +9,20 @@ use App\Models\Category;
 class AdminCategoryController extends Controller
 {
 
-    // public function __construct() {
+    public function __construct() {
 
-    //     $this->middleware('auth');
-    // }
+        $this->middleware('auth');
+    }
 
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-
-        $nombre = $request->get('nombre');
-       
-        // $categorias = Category::where('nombre','like',"%$nombre%")->orderBy('nombre')->paginate(2);
-        // return view('admin.category.index',compact('categorias'));
+        $categorias = Category::orderBy('nombre')->paginate(2);
+        return view('admin.category.index',compact('categorias'));
     }
 
     /**
@@ -46,20 +43,10 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
-         /*$cat = new Category();
-        $cat->nombre        = $request->nombre;
-        $cat->slug          = $request->slug;
-        $cat->descripcion   = $request->descripcion;
-        $cat->save();        
-        
-        return $cat;
-        */
-
-        //return Category::create($request->all());
 
         $request->validate([
-            'nombre' => 'required|max:50|unique:categories,nombre',
-            'slug' => 'required|max:50|unique:categories,slug',
+            'nombre' => 'required|max:30|unique:categories,nombre',
+            'slug' => 'required|max:30|unique:categories,slug',
 
         ]);
 
@@ -115,14 +102,6 @@ class AdminCategoryController extends Controller
 
         ]);
 
-
-        /*$cat->nombre        = $request->nombre;
-        $cat->slug          = $request->slug;
-        $cat->descripcion   = $request->descripcion;
-        $cat->save();  
-   
-        return $cat;
-        */
         $cat->fill($request->all())->save();
 
         //return $cat;
