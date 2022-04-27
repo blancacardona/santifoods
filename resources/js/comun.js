@@ -16,7 +16,7 @@ if (document.getElementById('apicategory')) {
     require('./admin/apicategory');
 }
 
-if (document.getElementById('apiproduct')) {
+if (document.getElementById('apirecipe')) {
     require('./admin/apirecipe');
 }
 

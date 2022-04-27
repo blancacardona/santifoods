@@ -8,12 +8,6 @@ const apirecipe = new Vue({
         div_aparecer: false,
         deshabilitar_boton:1,
 
-        //variables de precios
-        precioanterior:0,
-        precioactual:0,
-        descuento:0,
-        porcentajededescuento:0,
-        descuento_mensaje:'0'
     }, 
     computed: {
         generarSLug : function(){
@@ -116,8 +110,6 @@ const apirecipe = new Vue({
     mounted(){
         if (data.editar=='Si') {
             this.nombre = data.datos.nombre;
-            this.precioanterior = data.datos.precioanterior;
-            this.porcentajededescuento = data.datos.porcentajededescuento;
             this.deshabilitar_boton=0;
 
         }
