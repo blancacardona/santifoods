@@ -3,10 +3,10 @@
 
 @section('titulo', 'Crear Categoría')
 
-{{-- @section('breadcrumb')
+@section('breadcrumb')
   <li class="breadcrumb-item"><a href="{{route('admin.category.index')}}">Categorías</a></li>
   <li class="breadcrumb-item active">@yield('titulo')</li>
-@endsection --}}
+@endsection
 
 
 @section('contenido')
@@ -52,24 +52,10 @@
                         
                         
                     </div>
+                    <input
+                      :disabled = "deshabilitar_boton==1"
+                    type="submit" value="Guardar" class="btn btn-primary float-right">
                    
-
-        </div>
-        <!-- /.card-body -->
-        {{-- <div class="card-footer">
-
-          <a class="btn btn-danger" href="{{ route('cancelar','admin.category.index') }}">Cancelar</a>
-
-
-                    <input 
-                    :disabled = "deshabilitar_boton==1"
-                  type="submit" value="Guardar" class="btn btn-primary float-right">
-          
-                
-        </div> --}}
-        <!-- /.card-footer-->
-      </div>
-      <!-- /.card -->
     </form>
 </div>
 

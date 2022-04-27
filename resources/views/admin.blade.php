@@ -880,20 +880,12 @@
 <script src="http://localhost:8000/adminlte/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="http://localhost:8000/adminlte/dist/js/demo.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+<script src="{{ asset('js/app_admin.js') }}" defer></script>
 
 
-<script src="{{asset('asset/js/jquery-3.2.1.min.js') }}"></script>
-<script src="{{asset('asset/styles/bootstrap-4.1.2/popper.js') }}"></script>
-<script src="{{asset('asset/styles/bootstrap-4.1.2/bootstrap.min.js') }}"></script>
-<script src="{{asset('asset/plugins/greensock/TweenMax.min.js') }}"></script>
-<script src="{{asset('asset/plugins/greensock/TimelineMax.min.js') }}"></script>
-<script src="{{asset('asset/plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
-<script src="{{asset('asset/plugins/greensock/animation.gsap.min.js') }}"></script>
-<script src="{{asset('asset/plugins/greensock/ScrollToPlugin.min.js') }}"></script>
-<script src="{{asset('asset/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
-<script src="{{asset('asset/plugins/easing/easing.js') }}"></script>
-<script src="{{asset('asset/plugins/progressbar/progressbar.min.js') }}"></script>
-<script src="{{asset('asset/plugins/parallax-js-master/parallax.min.js') }}"></script>
-<script src="{{asset('asset/js/custom.js') }}"></script>
+@yield('scripts')
+
 </body>
 </html>

@@ -80,6 +80,22 @@ Route::resource('admin/category', AdminCategoryController::class)->names('admin.
 
 Auth::routes();
 
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+
+Route::get('cancelar/{ruta}', function($ruta) {
+    return redirect()->route($ruta)->with('cancelar','Acción Cancelada!');
+})->name('cancelar');
+
+Auth::routes();
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();

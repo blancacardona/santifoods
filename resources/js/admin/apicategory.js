@@ -2,12 +2,12 @@
 const apicategory = new Vue({
     el: '#apicategory',
     data: {
-        nombre: '',
+        nombre: 'Especial Navidad',
         slug: '',
         div_mensajeslug:'Slug Existe',
         div_clase_slug: 'badge badge-danger',
         div_aparecer: false,
-        deshabilitar_boton:1
+        deshabilitar_boton:0
     }, 
     computed: {
         generarSLug : function(){
@@ -29,51 +29,21 @@ const apicategory = new Vue({
     methods: {
         getCategory() {
 
-            if (this.slug) {
-                let url = '/api/category/'+this.slug;
-                axios.get(url).then(response => {
-                this.div_mensajeslug = response.data;
-                    if (this.div_mensajeslug==="Slug Disponible") {
-                        this.div_clase_slug = 'badge badge-success';
-                        this.deshabilitar_boton=0;
-                    } else {
-                        this.div_clase_slug = 'badge badge-danger';
-                        this.deshabilitar_boton=1;
-                    }
-                    this.div_aparecer = true;
-
-                    if (document.getElementById('editar')) {
-                        if ( document.getElementById('nombretemp').innerHTML===this.nombre) {
-                            this.deshabilitar_boton=0;
-                            this.div_mensajeslug='';
-                            this.div_clase_slug='';
-                            this.div_aparecer = false;
-
-                        }
-                    }
-
-                })
-
-            }else{
-                this.div_clase_slug = 'badge badge-danger';
-                this.div_mensajeslug="Debes escribir una categoria";
-                this.deshabilitar_boton=1;
+            
+            let url = '/api/category/'+this.slug;
+            axios.get(url).then(response => {
+            this.div_mensajeslug = response.data;
+                if (this.div_mensajeslug==="Slug Disponible") {
+                    this.div_clase_slug = 'badge badge-success';
+                    this.deshabilitar_boton=0;
+                } else {
+                    this.div_clase_slug = 'badge badge-danger';
+                    this.deshabilitar_boton=1;
+                }
                 this.div_aparecer = true;
 
-
-            } 
-            
-
-
-
-        }
-    },
-    mounted(){
-        if (document.getElementById('editar')) {
-            this.nombre = document.getElementById('nombretemp').innerHTML;
-            this.deshabilitar_boton=0;
+            })
 
         }
     }
-
 });
