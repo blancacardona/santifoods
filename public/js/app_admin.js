@@ -2289,9 +2289,13 @@ var api_search_autocomplete = new Vue({
 /*!*******************************************!*\
   !*** ./resources/js/admin/apicategory.js ***!
   \*******************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-var apicategory = new Vue({
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+
+var apicategory = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
   el: '#apicategory',
   data: {
     nombre: 'Especial Navidad',
@@ -2354,9 +2358,13 @@ var apicategory = new Vue({
 /*!*****************************************!*\
   !*** ./resources/js/admin/apirecipe.js ***!
   \*****************************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-var apirecipe = new Vue({
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+
+var apirecipe = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
   el: '#apirecipe',
   data: {
     nombre: '',
@@ -2490,13 +2498,17 @@ var confirmareliminar = new Vue({
 /*!*******************************!*\
   !*** ./resources/js/comun.js ***!
   \*******************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
-Vue.component('example-component', (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_0__["default"].component('example-component', (__webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]));
 
 if (document.getElementById('app')) {
-  var app = new Vue({
+  var app = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
     el: '#app'
   });
 }

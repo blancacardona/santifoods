@@ -1,3 +1,4 @@
+import Vue from 'vue'
 const apirecipe = new Vue({
     el: '#apirecipe',
     data: {

@@ -1,4 +1,4 @@
-
+import Vue from 'vue'
 const apicategory = new Vue({
     el: '#apicategory',
     data: {
