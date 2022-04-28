@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('category',CategoryController::class)->names('api.category');
+Route::apiResource('recipe',RecipeController::class)->names('api.recipe');
