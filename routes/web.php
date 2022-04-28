@@ -2,6 +2,7 @@
 
 use App\Models\Recipe;
 use App\Models\Category;
+use App\Models\Image;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -17,6 +18,30 @@ use App\Http\Controllers\Admin\AdminRecipeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//pruebas imagenes
+Route::get('/prueba', function () {
+
+    // Gate::authorize('haveaccess','role.show');
+    // $user = User::find(1);
+
+
+
+    // return $user;
+
+    $recipe = App\Models\Recipe::find(5);
+    return $recipe->images;    
+    
+
+});
+    
+//mostrar resultados
+Route::get('/resultados', function () {
+
+   $image = App\Models\Image::orderBy('id','Desc')->get();
+   return  $image; 
+});
+
+
 
 Route::get('/', function () {
     return view('index');

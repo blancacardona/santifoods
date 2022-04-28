@@ -41,17 +41,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class)->withTimestamps();
-    }
-
-    public function asignarRol($role)
-    {
-        $this->roles()->sync($role,false);
-    }
-    public function tieneRol()
-    {
-        return $this->roles->flatten()->pluck('name')->unique();
+    public function image(){
+        return $this->morphOne('App\Models\Image','imageable');
     }
 }

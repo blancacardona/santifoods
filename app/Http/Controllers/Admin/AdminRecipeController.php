@@ -76,23 +76,20 @@ class AdminRecipeController extends Controller
         $rec->nombre=                  $request->nombre;
         $rec->slug=                    $request->slug;
         $rec->category_id=             $request->category_id;
-        $rec->cantidad=                $request->cantidad;
-        $rec->precio_anterior=         $request->precioanterior;
-        $rec->precio_actual=           $request->precioactual;
-        $rec->porcentaje_descuento=    $request->porcentajededescuento;
-        $rec->descripcion_corta=       $request->descripcion_corta;
-        $rec->descripcion_larga=       $request->descripcion_larga;
-        $rec->especificaciones=        $request->especificaciones;
-        $rec->datos_de_interes=        $request->datos_de_interes;
-        $rec->estado=                  $request->estado;
+        $rec->descripcion=             $request->descripcion;
+        $rec->tiempo=                  $request->tiempo;
+        $rec->raciones=                $request->raciones;
+        $rec->ingredientes=            $request->ingredientes;
+        $rec->elaboracion=             $request->elaboracion;
+        // $rec->estado=                  $request->estado;
 
 
-        if ($request->activo) {
-            $rec->activo= 'Si';    
-        }
-        else {
-            $rec->activo= 'No';    
-        }
+        // if ($request->activo) {
+        //     $rec->activo= 'Si';    
+        // }
+        // else {
+        //     $rec->activo= 'No';    
+        // }
 
 
 
