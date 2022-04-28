@@ -70,6 +70,7 @@ Route::get('/admin', function () {
 })->name('admin');
 
 Route::resource('admin/category', AdminCategoryController::class)->names('admin.category');
+Route::resource('admin/recipe', AdminRecipeController::class)->names('admin.recipe');
 
 Auth::routes();
 
