@@ -31,7 +31,6 @@ const apirecipe = new Vue({
     },
     methods: {
         eliminarimagen(imagen) { 
-            //console.log(imagen);
 
             Swal.fire({
                 title: '¿Estas seguro de eliminar la imagen '+ imagen.id+ '?',
@@ -54,7 +53,6 @@ const apirecipe = new Vue({
 
                   //eliminar el elemento
                   var elemento = document.getElementById('idimagen-'+imagen.id);
-                  //console.log(elemento);
                   elemento.parentNode.removeChild(elemento);
                     
                   Swal.fire(

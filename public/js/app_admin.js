@@ -2329,7 +2329,6 @@ var apirecipe = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
   },
   methods: {
     eliminarimagen: function eliminarimagen(imagen) {
-      //console.log(imagen);
       Swal.fire({
         title: '¿Estas seguro de eliminar la imagen ' + imagen.id + '?',
         text: "¡No podrás revertir esto!",
@@ -2346,8 +2345,7 @@ var apirecipe = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
             console.log(response.data);
           }); //eliminar el elemento
 
-          var elemento = document.getElementById('idimagen-' + imagen.id); //console.log(elemento);
-
+          var elemento = document.getElementById('idimagen-' + imagen.id);
           elemento.parentNode.removeChild(elemento);
           Swal.fire('¡Eliminado!', 'Su archivo ha sido eliminado.', 'success');
         }

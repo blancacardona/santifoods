@@ -51,65 +51,7 @@
   <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
-        <!-- SELECT2 EXAMPLE -->
-
-
-
-      <div class="card card-success">
-          <div class="card-header">
-            <h3 class="card-title">Datos generados automáticamente</h3>
-
-           
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-
-             <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-
-                  <label>Visitas</label>
-                  <input  class="form-control" type="number" id="visitas" name="visitas">
-
-                 
-                </div>
-                <!-- /.form-group -->
-                
-              </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-                <div class="form-group">
-
-                  <label>Ventas</label>
-                  <input  class="form-control" type="number" id="ventas" name="ventas" >
-                </div>
-                <!-- /.form-group -->
-    
-              </div>
-              <!-- /.col -->
-            </div>
-            <!-- /.row -->
-
-
-
-
-          </div>
-          <!-- /.card-body -->
-          <div class="card-footer">
-            
-          </div>
-        </div>
-        <!-- /.card -->
-
-
-
-
-
-
-
-
-
-
+     
         <div class="card card-info">
           <div class="card-header">
             <h3 class="card-title">Datos de las recetas</h3>
@@ -130,7 +72,7 @@
                    @focus = "div_aparecer= false"
                   
                   class="form-control" type="text" id="nombre" name="nombre">
-
+                  <br>
                   <label>Slug</label>
                   <input 
                   readonly 
@@ -142,19 +84,8 @@
                     @{{ div_mensajeslug }}
                  </div>
                  <br v-if="div_aparecer">
-                 
-                </div>
-                <!-- /.form-group -->
-                
-              </div>
-              <!-- /.col -->
-              <div class="col-md-6">
-                <div class="form-group">
-
-
-
-
-                  <label>Categoria</label>
+                 <br>
+                 <label>Categoria</label>
                   <select name="category_id" id="category_id" class="form-control " style="width: 100%;">
                     @foreach($categorias as $categoria)
                     
@@ -167,6 +98,17 @@
 
 
                   </select>
+                 
+                </div>
+                <!-- /.form-group -->
+                
+              </div>
+              <!-- /.col -->
+              <div class="col-md-6">
+                <div class="form-group">
+
+                  <label>Descripción</label>
+                  <textarea class="form-control ckeditor" name="descripcion" id="descripcion" rows="3"></textarea>
 
                 </div>
                 <!-- /.form-group -->
@@ -185,214 +127,171 @@
       </div>
 
 
+      <div class="card card-info">
+        <div class="card-header">
+          <h3 class="card-title">Contenido recetas</h3>
 
+        
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
 
-   <div class="row">
-          <div class="col-md-6">
-
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Descripciones de las recetas</h3>
-              </div>
-              <div class="card-body">
-                <!-- Date dd/mm/yyyy -->
-                <div class="form-group">
-                  <label>Descripción:</label>
-
-                  <textarea class="form-control ckeditor" name="descripcion" id="descripcion" rows="3"></textarea>
-                
-                </div>
-                <!-- /.form group -->            
+                <label>Ingredientes</label>
+                <textarea class="form-control ckeditor" name="ingredientes" id="ingredientes" rows="3"></textarea>
+                <label>Tiempo</label>
+                  <input class="form-control" type="text" id="tiempo" name="tiempo" value="00:00">
 
               </div>
-              <!-- /.card-body -->
+              <!-- /.form-group -->
+              
             </div>
-            <!-- /.card -->
+            <!-- /.col -->
+            <div class="col-md-6">
+              <div class="form-group">
 
-       </div>
-        <!-- /.col-md-6 -->
+                <label>Elaboración</label>
+                <textarea class="form-control ckeditor" name="elaboracion" id="elaboracion" rows="3"></textarea>
 
-
-
-
-          {{-- <div class="col-md-6">
-
-            <div class="card card-info">
-              <div class="card-header">
-                <h3 class="card-title">Especificaciones y otros datos</h3>
-              </div>
-              <div class="card-body">
-                <!-- Date dd/mm/yyyy -->
-                <div class="form-group">
-                  <label>Especificaciones:</label>
-
-                  <textarea class="form-control ckeditor" name="especificaciones" id="especificaciones" rows="3"></textarea>
-                
-                </div>
-                <!-- /.form group -->
-
-               <div class="form-group">
-                  <label>Datos de interes:</label>
-
-                  <textarea class="form-control ckeditor" name="datos_de_interes" id="datos_de_interes" rows="5"></textarea>
-                
-                </div>                
+                <label>Raciones</label>
+                <input class="form-control" type="number" id="raciones" name="raciones" value="0">
 
               </div>
-              <!-- /.card-body -->
+              <!-- /.form-group -->
+  
             </div>
-            <!-- /.card -->
-
-       </div> --}}
-        <!-- /.col-md-6 -->
-
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
 
 
+        </div>
+        <!-- /.card-body -->
+        <div class="card-footer">
+         
       </div>
+    </div>
+
+
+  </div>
       <!-- /.row -->
 
 
 
 
-         <div class="card card-warning">
-          <div class="card-header">
-            <h3 class="card-title">Imágenes</h3>
+    <div class="card card-warning">
+    <div class="card-header">
+      <h3 class="card-title">Imágenes</h3>
 
-           
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
+      
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
 
-            <div class="form-group">
-                
-               <label for="imagenes">Añadir imágenes</label> 
-                              
-               <input type="file" class="form-control-file" name="imagenes[]" id="imagenes[]" multiple 
-               accept="image/*" >
-               
-               <div class="description">
-                Un número ilimitado de archivos pueden ser cargados en este campo. 
-                 <br>
-                 Límite de 2048 MB por imagen.
-                 <br>
-                 Tipos permitidos: jpeg, png, jpg, gif, svg.
-                 <br>
-               </div>
-
-            </div>
-
-
+      <div class="form-group">
+          
+          <label for="imagenes">Añadir imágenes</label> 
+                        
+          <input type="file" class="form-control-file" name="imagenes[]" id="imagenes[]" multiple 
+          accept="image/*" >
+          
+          <div class="description">
+          Un número ilimitado de archivos pueden ser cargados en este campo. 
+            <br>
+            Límite de 2048 MB por imagen.
+            <br>
+            Tipos permitidos: jpeg, png, jpg, gif, svg.
+            <br>
           </div>
 
+      </div>
 
-          <!-- /.card-body -->
-          <div class="card-footer">
-            
-          </div>
-        </div>
+
+    </div>
+
+
+    <!-- /.card-body -->
+    <div class="card-footer">
+      
+    </div>
+  </div>
         <!-- /.card -->
 
 
-      <div class="card card-danger">
-          <div class="card-header">
-            <h3 class="card-title">Administración</h3>
-          </div>
-          <!-- /.card-header -->
-      <div class="card-body">
+  <div class="card card-danger">
+      <div class="card-header">
+        <h3 class="card-title">Administración</h3>
+      </div>
+      <!-- /.card-header -->
+  <div class="card-body">
 
-       <div class="row">
-              <div class="col-md-6">
+    <div class="row">
+          
+          <!-- /.col -->
+          <div class="col-sm-6">
+                <!-- checkbox -->
+                {{-- <div class="form-group clearfix">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="activo" name="activo">
+                    <label class="custom-control-label" for="activo">Activo</label>
+                  </div>
+
+                </div> --}}
+
                 <div class="form-group">
-
-
-                  <label>Estado</label>
-                  <select name="estado" id="estado" class="form-control " style="width: 100%;">
-                    @foreach($estados_recetas as $estado)
-                    
-                     @if ($estado == 'Nuevo')
-                        <option value="{{ $estado }}" selected="selected">{{ $estado }}</option>
-                     @else
-                        <option value="{{ $estado }}">{{ $estado }}</option>
-                     @endif
-                    @endforeach
-                  </select>
-
-
+                <div class="custom-control custom-switch">
+                  <input type="checkbox"  class="custom-control-input" id="principal" name="principal">
+                  <label class="custom-control-label" for="principal">Aparece en el Slider principal</label>
                 </div>
-                <!-- /.form-group -->
-                
               </div>
-              <!-- /.col -->
-              <div class="col-sm-6">
-                    <!-- checkbox -->
-                    <div class="form-group clearfix">
-                      <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="activo" name="activo">
-                        <label class="custom-control-label" for="activo">Activo</label>
-                     </div>
 
-                    </div>
+              </div>
 
-                    <div class="form-group">
-                    <div class="custom-control custom-switch">
-                      <input type="checkbox"  class="custom-control-input" id="sliderprincipal" name="sliderprincipal">
-                      <label class="custom-control-label" for="sliderprincipal">Aparece en el Slider principal</label>
-                    </div>
-                  </div>
+            
 
-                  </div>
-
-                
-
-       </div>
+      </div>
             <!-- /.row -->
 
 
 
 
-       <div class="row">
-              <div class="col-md-12">
-                <div class="form-group">
+      <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
 
-                   <a class="btn btn-danger" href="{{ route('cancelar','admin.recipe.index') }}">Cancelar</a>
-                   <input    
-                   :disabled = "deshabilitar_boton==1"
-                                 
-                  type="submit" value="Guardar" class="btn btn-primary">
-                 
-                </div>
-                <!-- /.form-group -->
+                  <a class="btn btn-danger" href="{{ route('cancelar','admin.recipe.index') }}">Cancelar</a>
+                  <input    
+                  :disabled = "deshabilitar_boton==1"
+                                
+                type="submit" value="Guardar" class="btn btn-primary">
                 
               </div>
-              <!-- /.col -->
-
-
-           
-                
-
-       </div>
+              <!-- /.form-group -->
+              
+            </div>
+            <!-- /.col -->
+              
+      </div>
             <!-- /.row -->
-
-
-
-
-          </div>
+    </div>
 
 
    
-          <!-- /.card-body -->
-          <div class="card-footer">
-            
-          </div>
-        </div>
-        <!-- /.card -->
+    <!-- /.card-body -->
+    <div class="card-footer">
+      
+    </div>
+  </div>
+  <!-- /.card -->
 
 
 
 
 
 
-      </div><!-- /.container-fluid -->
+</div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
 

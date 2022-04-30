@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\CategoryController;
+use App\Http\Controllers\API\RecipeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResource('category',CategoryController::class)->names('api.category');
 Route::apiResource('recipe',RecipeController::class)->names('api.recipe');
+Route::delete('/eliminarimagen/{id}',[RecipeController::class,'eliminarimagen'])->name('api.eliminarimagen');

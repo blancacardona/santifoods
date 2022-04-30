@@ -62,7 +62,6 @@
                 <th>ID</th>
                 <th>Imagen</th>
                 <th>Nombre</th>
-                <th>Estado</th>
                 <th>Activo</th>
                 <th>Slider Principal</th>
                 <th colspan="3"></th>
@@ -75,9 +74,9 @@
                         <td> {{$receta->id }} </td>
                         <td>  
                            @if ($receta->images->count()<=0 )
-                              <img style="height: 100px;    width: 100px;" src="/imagenes/avatar.png" class="rounded-circle">
+                              <img style="height: 100px;    width: 100px;" src="/imagenes/avatar.png" class="round-circle">
                            @else
-                              <img style="height: 100px;    width: 100px;" src="{{ $receta->images->random()->url }}" class="rounded-circle">   
+                              <img style="height: 100px;    width: 100px;" src="{{ $receta->images->random()->url }}" class="round-circle">   
                            @endif
 
                           
@@ -85,26 +84,25 @@
 
                         </td>
                         <td> {{$receta->nombre }} </td>
-                        <td> {{$receta->estado }} </td>
                         <td> {{$receta->activo }} </td>
-                        <td> {{$receta->sliderprincipal }} </td>
+                        <td> {{$receta->principal }} </td>
 
                         {{-- @can('haveaccess','recipe.show')  --}}
-                        {{-- <td> <a class="btn btn-default"  
+                        <td> <a class="btn btn-default"  
                             href="{{ route('admin.recipe.show',$receta->slug) }}">Ver</a>
-                        </td> --}}
+                        </td>
                         {{-- @endcan --}}
                         {{-- @can('haveaccess','recipe.edit')  --}}
-                        {{-- <td> <a class="btn btn-info" 
+                        <td> <a class="btn btn-info" 
                             href="{{ route('admin.recipe.edit',$receta->slug) }}">Editar</a>
-                        </td> --}}
+                        </td>
                         {{-- @endcan --}}
                         {{-- @can('haveaccess','recipe.destroy')  --}}
-                        {{-- <td> <a class="btn btn-danger" 
+                        <td> <a class="btn btn-danger" 
                             href="{{ route('admin.recipe.index') }}" 
                             v-on:click.prevent="deseas_eliminar({{$receta->id}})"
                             >Eliminar</a>
-                        </td> --}}
+                        </td>
                         {{-- @endcan --}}
                         
                     </tr>

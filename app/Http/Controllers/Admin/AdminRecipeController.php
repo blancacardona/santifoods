@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Recipe;
 use App\Models\Category;
+use App\Models\Image;
 use Illuminate\Support\Facades\File;
 
 class AdminRecipeController extends Controller
@@ -23,7 +24,7 @@ class AdminRecipeController extends Controller
     {
         $nombre = $request->get('nombre');
        
-        $recetas = Recipe::where('nombre','like',"%$nombre%")->orderBy('nombre')->paginate(2);
+        $recetas = Recipe::with('images','category')->where('nombre','like',"%$nombre%")->orderBy('nombre')->paginate(2);
         return view('admin.recipe.index',compact('recetas'));
     }
 
@@ -34,9 +35,8 @@ class AdminRecipeController extends Controller
      */
     public function create()
     {
-        $estados_recetas = $this->estados_recetas();
         $categorias = Category::orderBy('nombre')->get();
-        return view('admin.recipe.create',compact('categorias','estados_recetas'));
+        return view('admin.recipe.create',compact('categorias'));
     }
 
     /**
@@ -81,7 +81,7 @@ class AdminRecipeController extends Controller
         $rec->raciones=                $request->raciones;
         $rec->ingredientes=            $request->ingredientes;
         $rec->elaboracion=             $request->elaboracion;
-        // $rec->estado=                  $request->estado;
+
 
 
         // if ($request->activo) {
@@ -93,11 +93,11 @@ class AdminRecipeController extends Controller
 
 
 
-        if ($request->sliderprincipal) {
-            $rec->sliderprincipal= 'Si';    
+        if ($request->principal) {
+            $rec->principal= 'Si';    
         }
         else {
-            $rec->sliderprincipal= 'No';    
+            $rec->principal= 'No';    
         }
 
     
@@ -106,13 +106,7 @@ class AdminRecipeController extends Controller
 
         $rec->images()->createMany($urlimagenes);
 
-        //return $rec->images;
-
         return redirect()->route('admin.recipe.index')->with('datos','Registro creado correctamente!');
-
-        
- 
-        //return $request->all();
 
 
     }
@@ -123,8 +117,13 @@ class AdminRecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
+        $receta = Recipe::with('images','category')->where('slug',$slug)->firstOrFail();
+
+        $categorias = Category::orderBy('nombre')->get();
+        
+        return view('admin.recipe.show',compact('receta','categorias'));
         
     }
 
@@ -134,9 +133,13 @@ class AdminRecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($slug)
     {
-        //
+        $receta = Recipe::with('images','category')->where('slug',$slug)->firstOrFail();
+
+        $categorias = Category::orderBy('nombre')->get();
+        
+        return view('admin.recipe.edit',compact('receta','categorias'));
     }
 
     /**
@@ -148,7 +151,66 @@ class AdminRecipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nombre' => 'required|unique:recipes,nombre,'.$id,
+            'slug' => 'required|unique:recipes,slug,'.$id,
+            'imagenes.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+
+        ]);
+        
+        $urlimagenes = [];
+
+        if ($request->hasFile('imagenes')) {
+
+            $imagenes = $request->file('imagenes');
+
+            foreach ($imagenes as $imagen) {
+
+                $nombre = time().'_'.$imagen->getClientOriginalName();
+
+                $ruta = public_path().'/imagenes';
+                
+                $imagen->move($ruta , $nombre);
+
+                $urlimagenes[]['url'] = '/imagenes/'.$nombre;
+            }
+        }
+        $rec = Recipe::findOrFail($id);
+
+        $rec->nombre=                  $request->nombre;
+        $rec->slug=                    $request->slug;
+        $rec->category_id=             $request->category_id;
+        $rec->descripcion=             $request->descripcion;
+        $rec->tiempo=                  $request->tiempo;
+        $rec->raciones=                $request->raciones;
+        $rec->ingredientes=            $request->ingredientes;
+        $rec->elaboracion=             $request->elaboracion;
+
+        
+
+        // if ($request->activo) {
+        //     $prod->activo= 'Si';    
+        // }
+        // else {
+        //     $prod->activo= 'No';    
+        // }
+
+
+
+        if ($request->principal) {
+            $rec->principal= 'Si';    
+        }
+        else {
+            $rec->principal= 'No';    
+        }
+
+    
+        $rec->save();
+
+
+        $rec->images()->createMany($urlimagenes);
+
+        return redirect()->route('admin.recipe.edit',$rec->slug)->with('datos','Registro actualizado correctamente!');
     }
 
     /**
@@ -159,6 +221,18 @@ class AdminRecipeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $rec= Recipe::with('images')->findOrFail($id);
+
+        foreach($rec->images as $image) {
+            
+            $archivo = substr($image->url,1);
+
+             File::delete($archivo);
+    
+            $image->delete();
+        }
+
+        $rec->delete();
+        return redirect()->route('admin.recipe.index')->with('datos','Registro eliminado correctamente!');
     }
 }

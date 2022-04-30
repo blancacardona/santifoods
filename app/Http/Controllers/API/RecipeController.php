@@ -5,10 +5,10 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Recipe;
-// use App\Image;
+use App\Models\Image;
 use Illuminate\Support\Facades\File;
 
-class ProductController extends Controller
+class RecipeController extends Controller
 {
     public function index()
     {
@@ -36,20 +36,20 @@ class ProductController extends Controller
     }
 
 
-    // public function eliminarimagen($id)
-    // {
+    public function eliminarimagen($id)
+    {
         
-    //     //return "se va a eliminar el registro ".$id;
-    //     $image = Image::find($id);
+        //return "se va a eliminar el registro ".$id;
+        $image = Image::find($id);
 
-    //     $archivo = substr($image->url,1);
+        $archivo = substr($image->url,1);
 
-    //     $eliminar = File::delete($archivo);
+        $eliminar = File::delete($archivo);
 
-    //     $image->delete();
+        $image->delete();
 
-    //     return "eliminado id:".$id. ' '.$eliminar;
-    // }
+        return "eliminado id:".$id. ' '.$eliminar;
+    }
 
 
 

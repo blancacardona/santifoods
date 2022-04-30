@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminRecipeController;
+
+use App\Models\User;
+use App\Models\WebPermission\Models\Role;
+use App\Models\WebPermission\Models\Permission;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,12 +23,8 @@ use App\Http\Controllers\Admin\AdminRecipeController;
 |
 */
 //pruebas imagenes
+
 Route::get('/prueba', function () {
-
-    // Gate::authorize('haveaccess','role.show');
-    // $user = User::find(1);
-
-
 
     // return $user;
 
@@ -44,6 +44,8 @@ Route::get('/resultados', function () {
 
 
 Route::get('/', function () {
+ 
+
     return view('index');
 });
 
@@ -69,6 +71,7 @@ Route::get('/', function () {
 // Route::get('cocinamos','ShowcookingController@create');
 // Route::post('cocinamos','ShowcookingController@store');
 
+/*COCINAMOS*/
 Route::get('/cocinamos', function () {
     return view('cocinamos'); 
 });
@@ -86,11 +89,12 @@ Route::get('/cocinamos/chefencasa', function () {
     return view('chefencasa'); 
 });
 
-/*SANTIFOODS*/
+/*SOBRE MI*/
 Route::get('/sobremi', function () {
     return view('sobremi'); 
 });
 
+/*ADMIN*/
 Route::get('/admin', function () {
     return view('admin');
 })->name('admin');
@@ -103,3 +107,22 @@ Auth::routes();
 Route::get('cancelar/{ruta}', function($ruta) {
     return redirect()->route($ruta)->with('cancelar','Acción Cancelada!');
 })->name('cancelar');
+
+/*ROLES Y USUARIOS*/
+// Route::resource('/role', RoleController::class)->names('role');
+
+// Route::resource('/user', UserController::class, ['except'=>[
+//     'create','store']])->names('user');
+
+Route::get('/test', function() {
+    // return Permission::create([
+    //     'name' => 'Listar recetas',
+    //     'slug' => 'recipe.index',
+    //     'description' => 'El usuario puede listar los permisos',
+    // ]);
+    $role = Role::find(2);
+    $role->permissions()->sync([1,2]);
+    return $role->permissions;
+    
+   
+});
