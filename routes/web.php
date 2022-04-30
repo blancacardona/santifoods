@@ -102,27 +102,54 @@ Route::get('/admin', function () {
 Route::resource('admin/category', AdminCategoryController::class)->names('admin.category');
 Route::resource('admin/recipe', AdminRecipeController::class)->names('admin.recipe');
 
-Auth::routes();
 
 Route::get('cancelar/{ruta}', function($ruta) {
     return redirect()->route($ruta)->with('cancelar','Acción Cancelada!');
 })->name('cancelar');
 
 /*ROLES Y USUARIOS*/
-// Route::resource('/role', RoleController::class)->names('role');
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/role', RoleController::class)->names('role');
 
 // Route::resource('/user', UserController::class, ['except'=>[
 //     'create','store']])->names('user');
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::get('/test', function() {
     // return Permission::create([
-    //     'name' => 'Listar recetas',
+    //     'name' => 'List recipe',
     //     'slug' => 'recipe.index',
-    //     'description' => 'El usuario puede listar los permisos',
+    //     'description' => 'User can list permissions',
     // ]);
-    $role = Role::find(2);
-    $role->permissions()->sync([1,2]);
-    return $role->permissions;
+
+    // return Role::create([
+    //     'name' => 'test',
+    //     'slug' => 'test',
+    //     'description' => 'test',
+    //     'full-access' => 'no'
+    // ]);
+
+    // $role = Role::find(2);
+    // $role->permissions()->sync([1,2]);
+    // return $role->permissions;
+    // $role = Role::find(2);
+    // $role->permissions()->sync([1,2]);
+    // return $role->permissions;
     
    
 });
