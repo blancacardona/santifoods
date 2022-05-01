@@ -18,13 +18,6 @@
 
                     @include('custom.message')
 
-
-                    
-
-
-
-            
-
                     <table class="table table-hover">
                         <thead>
                           <tr>
