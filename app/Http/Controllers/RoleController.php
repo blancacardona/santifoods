@@ -16,7 +16,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        // Gate::authorize('haveaccess','role.index');
+        Gate::authorize('haveaccess','role.index');
 
         $roles =  Role::orderBy('id','Desc')->paginate(2);
 
@@ -30,7 +30,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        // Gate::authorize('haveaccess','role.create');
+        Gate::authorize('haveaccess','role.create');
 
         $permissions = Permission::get();
 
@@ -45,7 +45,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        // Gate::authorize('haveaccess','role.create');
+        Gate::authorize('haveaccess','role.create');
 
         $request->validate([
             'name'          => 'required|max:50|unique:roles,name',
@@ -71,7 +71,7 @@ class RoleController extends Controller
      */
     public function show(Role $role)
     {
-        // $this->authorize('haveaccess','role.show');
+        $this->authorize('haveaccess','role.show');
 
         $permission_role=[];
 
@@ -92,7 +92,7 @@ class RoleController extends Controller
      */
     public function edit(Role $role)
     {
-        // $this->authorize('haveaccess','role.edit');
+        $this->authorize('haveaccess','role.edit');
         $permission_role=[];
 
         foreach($role->permissions as $permission) {
@@ -113,7 +113,7 @@ class RoleController extends Controller
      */
     public function update(Request $request, Role $role)
     {
-        // $this->authorize('haveaccess','role.edit');
+        $this->authorize('haveaccess','role.edit');
         $request->validate([
             'name'          => 'required|max:50|unique:roles,name,'.$role->id,
             'slug'          => 'required|max:50|unique:roles,slug,'.$role->id,
@@ -136,7 +136,7 @@ class RoleController extends Controller
      */
     public function destroy(Role $role)
     {
-        // $this->authorize('haveaccess','role.destroy');
+        $this->authorize('haveaccess','role.destroy');
         $role->delete();
 
         return redirect()->route('role.index')

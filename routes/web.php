@@ -6,6 +6,7 @@ use App\Models\Image;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminRecipeController;
 
@@ -110,10 +111,10 @@ Route::get('cancelar/{ruta}', function($ruta) {
 /*ROLES Y USUARIOS*/
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/role', RoleController::class)->names('role');
 
-// Route::resource('/user', UserController::class, ['except'=>[
-//     'create','store']])->names('user');
+Route::resource('/role', RoleController::class)->names('role');
+Route::resource('/user', UserController::class, ['except'=>[
+    'create','store']])->names('user');
 
 
 
@@ -151,5 +152,9 @@ Route::get('/test', function() {
     // $role->permissions()->sync([1,2]);
     // return $role->permissions;
     
-   
+    Gate::authorize('haveaccess','role.show');
+    $user = User::find(1);
+
+    return $user;
+
 });
