@@ -53,7 +53,7 @@
                           </div>
                           
                           <hr>
-                          <input class="btn btn-primary" type="submit" value="Save">
+                          <input class="btn btn-primary" type="submit" value="Guardar">
 
                      </div>
 
