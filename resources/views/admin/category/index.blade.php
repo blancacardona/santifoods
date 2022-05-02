@@ -63,6 +63,7 @@
                             v-on:click.prevent="deseas_eliminar({{$categoria->id}})"
                             >Eliminar</a>
                         </td>
+                        @endcan
                         
                     </tr>
                 @endforeach

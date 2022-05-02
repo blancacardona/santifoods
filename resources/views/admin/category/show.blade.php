@@ -16,10 +16,6 @@
     <form >
       @csrf
   
-
-
-      
-
       <span style="display:none;" id="editar">{{ $editar }}</span>
       <span style="display:none;" id="nombretemp">{{ $cat->nombre}}</span>
       <!-- Default box -->
