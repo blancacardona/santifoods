@@ -22,8 +22,9 @@ class AdminRecipeController extends Controller
      */
     public function index(Request $request)
     {
+        $this->authorize('haveaccess','recipe.index');
+
         $nombre = $request->get('nombre');
-       
         $recetas = Recipe::with('images','category')->where('nombre','like',"%$nombre%")->orderBy('nombre')->paginate(2);
         return view('admin.recipe.index',compact('recetas'));
     }
@@ -35,6 +36,8 @@ class AdminRecipeController extends Controller
      */
     public function create()
     {
+        $this->authorize('haveaccess','recipe.create');
+
         $categorias = Category::orderBy('nombre')->get();
         return view('admin.recipe.create',compact('categorias'));
     }
@@ -47,6 +50,8 @@ class AdminRecipeController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('haveaccess','recipe.create');
+
         $request->validate([
             'nombre' => 'required|unique:recipes,nombre',
             'slug' => 'required|unique:recipes,slug',
@@ -119,10 +124,10 @@ class AdminRecipeController extends Controller
      */
     public function show($slug)
     {
-        $receta = Recipe::with('images','category')->where('slug',$slug)->firstOrFail();
+        $this->authorize('haveaccess','recipe.show');
 
+        $receta = Recipe::with('images','category')->where('slug',$slug)->firstOrFail();
         $categorias = Category::orderBy('nombre')->get();
-        
         return view('admin.recipe.show',compact('receta','categorias'));
         
     }
@@ -135,10 +140,10 @@ class AdminRecipeController extends Controller
      */
     public function edit($slug)
     {
+        $this->authorize('haveaccess','recipe.edit');
+    
         $receta = Recipe::with('images','category')->where('slug',$slug)->firstOrFail();
-
         $categorias = Category::orderBy('nombre')->get();
-        
         return view('admin.recipe.edit',compact('receta','categorias'));
     }
 
@@ -151,6 +156,8 @@ class AdminRecipeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->authorize('haveaccess','recipe.edit');
+
         $request->validate([
             'nombre' => 'required|unique:recipes,nombre,'.$id,
             'slug' => 'required|unique:recipes,slug,'.$id,
@@ -221,8 +228,9 @@ class AdminRecipeController extends Controller
      */
     public function destroy($id)
     {
-        $rec= Recipe::with('images')->findOrFail($id);
+        $this->authorize('haveaccess','recipe.destroy');
 
+        $rec= Recipe::with('images')->findOrFail($id);
         foreach($rec->images as $image) {
             
             $archivo = substr($image->url,1);

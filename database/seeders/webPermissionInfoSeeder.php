@@ -215,43 +215,43 @@ class webPermissionInfoSeeder extends Seeder
 
    $permission_all[] = $permission->id;
 
-   //permission product
+   //permission recipe
    $permission = Permission::create([
-       'name' => 'List product',
-       'slug' => 'product.index',
-       'description' => 'A user can list product',
+       'name' => 'List recipe',
+       'slug' => 'recipe.index',
+       'description' => 'A user can list recipe',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Show product',
-       'slug' => 'product.show',
-       'description' => 'A user can see product',
+       'name' => 'Show recipe',
+       'slug' => 'recipe.show',
+       'description' => 'A user can see recipe',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Create product',
-       'slug' => 'product.create',
-       'description' => 'A user can create product',
+       'name' => 'Create recipe',
+       'slug' => 'recipe.create',
+       'description' => 'A user can create recipe',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Edit product',
-       'slug' => 'product.edit',
-       'description' => 'A user can edit product',
+       'name' => 'Edit recipe',
+       'slug' => 'recipe.edit',
+       'description' => 'A user can edit recipe',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Destroy product',
-       'slug' => 'product.destroy',
-       'description' => 'A user can destroy product',
+       'name' => 'Destroy recipe',
+       'slug' => 'recipe.destroy',
+       'description' => 'A user can destroy recipe',
    ]);
 
    $permission_all[] = $permission->id;

@@ -41,7 +41,7 @@
                                 <td>{{ $role['full-access']}}</td>                            
                                 <td> 
                                 @can('haveaccess','role.show')
-                                  <a class="btn btn-info" href="{{ route('role.show',$role->id)}}">Mostrar</a> 
+                                  <a class="btn btn-info" href="{{ route('role.show',$role->id)}}">Ver</a> 
                                 @endcan 
                                 </td>  
                                 <td> 

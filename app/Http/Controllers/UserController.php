@@ -6,7 +6,7 @@ use App\Http\Requests\UserFormRequest;
 use App\Http\Requests\UserEditFormRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Role;
+use App\Models\WebPermission\Models\Role;
 
 class UserController extends Controller
 {

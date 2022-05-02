@@ -1,7 +1,7 @@
 @extends('admin')
 
 
-@section('titulo', 'Administración de recetas')
+@section('titulo', 'Administración de Recetas')
 
 @section('breadcrumb')
   <li class="breadcrumb-item active">@yield('titulo')</li>
@@ -31,7 +31,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Sección de recetas</h3>
+          <h3 class="card-title">Sección de Recetas</h3>
 
           <div class="card-tools">
             
@@ -52,9 +52,9 @@
         </div>
         <!-- /.card-header -->
         <div class="card-body table-responsive p-0" >
-          {{-- @can('haveaccess','recipe.create')     --}}
-                <a class=" m-2 float-right btn btn-primary"  href="{{ route('admin.recipe.create') }}">Crear</a>
-          {{-- @endcan --}}
+          @can('haveaccess','recipe.create')    
+            <a class=" m-2 float-right btn btn-primary"  href="{{ route('admin.recipe.create') }}">Crear</a>
+          @endcan
 
           <table class="table1 table-head-fixed">
             <thead>
@@ -87,23 +87,23 @@
                         <td> {{$receta->activo }} </td>
                         <td> {{$receta->principal }} </td>
 
-                        {{-- @can('haveaccess','recipe.show')  --}}
+                        @can('haveaccess','recipe.show') 
                         <td> <a class="btn btn-default"  
                             href="{{ route('admin.recipe.show',$receta->slug) }}">Ver</a>
                         </td>
-                        {{-- @endcan --}}
-                        {{-- @can('haveaccess','recipe.edit')  --}}
+                        @endcan
+                        @can('haveaccess','recipe.edit') 
                         <td> <a class="btn btn-info" 
                             href="{{ route('admin.recipe.edit',$receta->slug) }}">Editar</a>
                         </td>
-                        {{-- @endcan --}}
-                        {{-- @can('haveaccess','recipe.destroy')  --}}
+                        @endcan
+                        @can('haveaccess','recipe.destroy') 
                         <td> <a class="btn btn-danger" 
                             href="{{ route('admin.recipe.index') }}" 
                             v-on:click.prevent="deseas_eliminar({{$receta->id}})"
                             >Eliminar</a>
                         </td>
-                        {{-- @endcan --}}
+                        @endcan
                         
                     </tr>
                 @endforeach

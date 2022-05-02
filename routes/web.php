@@ -25,23 +25,22 @@ use App\Models\WebPermission\Models\Permission;
 */
 //pruebas imagenes
 
-Route::get('/prueba', function () {
+// Route::get('/prueba', function () {
 
-    // return $user;
+//     // return $user;
 
-    $recipe = App\Models\Recipe::find(5);
-    return $recipe->images;    
+//     $recipe = App\Models\Recipe::find(5);
+//     return $recipe->images;    
     
 
-});
+// });
     
 //mostrar resultados
-Route::get('/resultados', function () {
+// Route::get('/resultados', function () {
 
-   $image = App\Models\Image::orderBy('id','Desc')->get();
-   return  $image; 
-});
-
+//    $image = App\Models\Image::orderBy('id','Desc')->get();
+//    return  $image; 
+// });
 
 
 Route::get('/', function () {
@@ -50,27 +49,14 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Router Auth
-// Route::get('/login', 'ConnectController@getLogin')->name('login');
 
-// Auth::routes();
 
-// /* GESTION*/
-// Route::resource('usuarios','UserController')->middleware('auth')->middleware('auth');
-// Route::resource('roles','RoleController')->middleware('auth')->middleware('auth');
-
-// Route::resource('/Categoria', 'CategoriaController')->middleware('auth');
-// Route::resource('/receta', 'RecetasController')->middleware('auth');
-
-// /*ADMIN*/
 
 // /*NEWSLETTER*/
 // Route::get('newsletter','NewsletterController@create');
 // Route::post('newsletter','NewsletterController@store');
 
-/*SHOWCOOKING*/
-// Route::get('cocinamos','ShowcookingController@create');
-// Route::post('cocinamos','ShowcookingController@store');
+
 
 /*COCINAMOS*/
 Route::get('/cocinamos', function () {
@@ -90,10 +76,12 @@ Route::get('/cocinamos/chefencasa', function () {
     return view('chefencasa'); 
 });
 
+
 /*SOBRE MI*/
 Route::get('/sobremi', function () {
     return view('sobremi'); 
 });
+
 
 /*ADMIN*/
 Route::get('/admin', function () {
@@ -108,14 +96,15 @@ Route::get('cancelar/{ruta}', function($ruta) {
     return redirect()->route($ruta)->with('cancelar','Acción Cancelada!');
 })->name('cancelar');
 
+
 /*ROLES Y USUARIOS*/
-Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/role', RoleController::class)->names('role');
 Route::resource('/user', UserController::class, ['except'=>[
     'create','store']])->names('user');
 
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
 
 
@@ -152,9 +141,6 @@ Route::get('/test', function() {
     // $role->permissions()->sync([1,2]);
     // return $role->permissions;
     
-    Gate::authorize('haveaccess','role.show');
-    $user = User::find(1);
-
-    return $user;
+    
 
 });

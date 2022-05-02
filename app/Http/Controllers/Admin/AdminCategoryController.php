@@ -19,8 +19,11 @@ class AdminCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $this->authorize('haveaccess','category.index');
+        $nombre = $request->get('nombre');
+
         $categorias = Category::orderBy('nombre')->paginate(2);
         return view('admin.category.index',compact('categorias'));
     }
@@ -32,6 +35,7 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
+        $this->authorize('haveaccess','category.create');
         return view('admin.category.create');
     }
 
@@ -43,6 +47,7 @@ class AdminCategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $this->authorize('haveaccess','category.create');
 
         $request->validate([
             'nombre' => 'required|max:30|unique:categories,nombre',
@@ -51,9 +56,7 @@ class AdminCategoryController extends Controller
         ]);
 
         Category::create($request->all());
-
         return redirect()->route('admin.category.index')->with('datos','Registro creado correctamente!');
-
 
     }
 
@@ -65,6 +68,8 @@ class AdminCategoryController extends Controller
      */
     public function show($slug)
     {
+        $this->authorize('haveaccess','category.show');
+
         $cat= Category::where('slug',$slug)->firstOrFail();
         $editar = 'Si';
         
@@ -79,6 +84,7 @@ class AdminCategoryController extends Controller
      */
     public function edit($slug)
     {
+        $this->authorize('haveaccess','category.edit');
         $cat= Category::where('slug',$slug)->firstOrFail();
         $editar = 'Si';
         
@@ -94,8 +100,9 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $cat= Category::findOrFail($id);
+        $this->authorize('haveaccess','category.edit');
 
+        $cat= Category::findOrFail($id);
         $request->validate([
             'nombre' => 'required|max:50|unique:categories,nombre,'.$cat->id,
             'slug' => 'required|max:50|unique:categories,slug,'.$cat->id,
@@ -103,8 +110,6 @@ class AdminCategoryController extends Controller
         ]);
 
         $cat->fill($request->all())->save();
-
-        //return $cat;
         
         return redirect()->route('admin.category.index')->with('datos','Registro actualizado correctamente!');
     }
@@ -117,6 +122,8 @@ class AdminCategoryController extends Controller
      */
     public function destroy($id)
     {
+        $this->authorize('haveaccess','category.destroy');
+        
         $cat= Category::findOrFail($id);
         $cat->delete();
         return redirect()->route('admin.category.index')->with('datos','Registro eliminado correctamente!');
