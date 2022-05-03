@@ -52,6 +52,25 @@
                         <input  v-model="generarSLug"  class="form-control" type="text" name="slug" id="slug" value="{{ $cat->slug }} " readonly>
 
                     </div>
+
+                    <div class="row">
+              
+                      <div class="col-sm-6">
+                          
+                            <div class="form-group">
+                            <div class="custom-control custom-switch">
+                              <input  disabled type="checkbox"  class="custom-control-input" id="slidercategoria" name="slidercategoria" 
+                                @if($cat->slidercategoria=='Si')
+                                    checked
+                                @endif
+                              >
+                              <label class="custom-control-label" for="slidercategoria">Aparece en el Slider Categoria</label>
+                            </div>
+                          </div>
+            
+                          </div>
+            
+                  </div>
                    
 
         </div>

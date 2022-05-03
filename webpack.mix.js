@@ -18,7 +18,7 @@ mix.js('resources/js/app.js', 'public/js').vue()
         'public/asset/plugins/OwlCarousel2-2.2.1/owl.carousel.css',
         'public/asset/plugins/OwlCarousel2-2.2.1/owl.theme.default.css',
         'public/asset/plugins/OwlCarousel2-2.2.1/animate.css',
-        'public/asset/styles/comun.css'
+        'public/asset/styles/comun.css',
     ], 'public/css/all.css');  
   
   
@@ -33,7 +33,8 @@ mix.js('resources/js/app.js', 'public/js').vue()
      'public/asset/plugins/easing/easing.js',
      'public/asset/plugins/progressbar/progressbar.min.js',
      'public/asset/plugins/parallax-js-master/parallax.min.js',
-     'public/asset/js/custom.js'
+     'public/asset/js/custom.js',
+     'public/asset/styles/bootstrap-4.1.2/popper.js',
   ], 'public/js/all.js');  
   
   mix.js('resources/js/app_admin.js', 'public/js').vue();

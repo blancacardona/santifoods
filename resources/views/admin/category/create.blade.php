@@ -52,6 +52,34 @@
                         
                         
                     </div>
+
+                    <div class="row">
+                          
+                          <!-- /.col -->
+                          <div class="col-sm-6">
+                                <!-- checkbox -->
+                                {{-- <div class="form-group clearfix">
+                                  <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="activo" name="activo">
+                                    <label class="custom-control-label" for="activo">Activo</label>
+                                  </div>
+                
+                                </div> --}}
+                
+                                <div class="form-group">
+                                <div class="custom-control custom-switch">
+                                  <input type="checkbox"  class="custom-control-input" id="slidercategoria" name="slidercategoria">
+                                  <label class="custom-control-label" for="slidercategoria">Aparece en la sección principal de categorias </label>
+                                </div>
+                              </div>
+                
+                              </div>
+                
+                      </div>
+
+
+
+
                     <div class="card-footer">
 
                       <a class="btn btn-danger" href="{{ route('cancelar','admin.category.index') }}">Cancelar</a>

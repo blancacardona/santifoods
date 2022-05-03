@@ -25,7 +25,7 @@ class AdminRecipeController extends Controller
         $this->authorize('haveaccess','recipe.index');
 
         $nombre = $request->get('nombre');
-        $recetas = Recipe::with('images','category')->where('nombre','like',"%$nombre%")->orderBy('nombre')->paginate(2);
+        $recetas = Recipe::with('images','category')->where('nombre','like',"%$nombre%")->orderBy('nombre')->paginate(10);
         return view('admin.recipe.index',compact('recetas'));
     }
 

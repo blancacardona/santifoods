@@ -21,7 +21,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/styles/comun.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ asset('asset/styles/main_styles.css') }}">
 
-{{-- @yield('styles') --}}
+@yield('styles')
 
 
 
@@ -38,37 +38,6 @@
 
 		<div class="menu">
 
-			<!-- Navigation -->
-			<div class="menu_nav">
-				<ul class="nav justify-content-center">
-					<li class="nav-item"><a href="{{ url('/')}}">Inicio</a></li>
-					<li class="nav-item"><a href="{{ url('/recetas')}}">Recetas</a></li>
-					<li class="nav-item"><a href="{{ url('/cocinamos')}}">Cocinamos</a></li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="{{ url('/cocinamos')}}" role="button" aria-expanded="false">Cocinamos</a>
-						<ul class="dropdown-menu">
-						<li><a class="dropdown-item" href="{{ url('/cocinamos/showcooking')}}">Showcooking</a></li>
-						<li><a class="dropdown-item" href="{{ url('/cocinamos/teambuilding')}}">Team building</a></li>
-						<li><a class="dropdown-item" href="{{ url('/cocinamos/chefencasa')}}">Chef en casa</a></li>
-						</ul>
-					</li>
-					<li class="nav-item"><a href="{{ url('/blog')}}">Blog</a></li>
-					<li class="nav-item"><a href="{{ url('/sobremi')}}">Sobre mi</a></li>
-					<li class="nav-item"><a href="{{ url('/contacto')}}">Contacto</a></li>
-				</ul>
-			</div>
-
-			{{-- <div class="menu_nav">
-				<ul>
-					<li><a href="{{ url('/')}}">Inicio</a></li>
-					<li><a href="{{ url('/recetas')}}">Recetas</a></li>
-					<li><a href="{{ url('/cocinamos')}}">Cocinamos</a></li>
-					<li><a href="{{ url('/blog')}}">Blog</a></li>
-					<li><a href="{{ url('/sobremi')}}">Sobre mi</a></li>
-					<li><a href="{{ url('/contacto')}}">Contacto</a></li>
-					
-				</ul>
-			</div> --}}
 
 			<div class="menu_contact">
 				<div class="menu_phone d-flex flex-row align-items-center justify-content-start">
@@ -83,6 +52,72 @@
 
 			<!-- Header -->
 
+			<nav class="navbar navbar-expand-lg navbar-light bg-white">
+				<div class="container-fluid">
+				  <a class="navbar-brand" href="#">Santifoods</a>
+				  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url('/')}}">Inicio</a>
+						</li>
+					 	<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="{{route('category.index')}}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+							Recetas
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" href="{{ url('/recetas')}}">Últimas Recetas</a></li>
+								<li><a class="dropdown-item" href="{{ url('/entrantes')}}">Entrantes</a></li>
+								<li><a class="dropdown-item" href="{{ url('/recetas')}}">Primeros</a></li>
+								<li><a class="dropdown-item" href="#">Segundos</a></li>
+								<li><a class="dropdown-item" href="#">Postres</a></li>
+								<li><a class="dropdown-item" href="#">Pescados</a></li>
+								<li><a class="dropdown-item" href="#">Carnes</a></li>
+								<li><a class="dropdown-item" href="#">Pasta</a></li>
+								<li><a class="dropdown-item" href="#">Recetas Especiales</a></li>
+							</ul>
+					  	</li>
+					  	<li class="nav-item">
+							<a class="nav-link" href="{{ url('/cocinamos')}}">Cocinamos</a>
+					  	</li>
+					  	<li class="nav-item">
+							<a class="nav-link" href="{{ url('/blog')}}">Blog</a>
+					  	</li>
+					  	<li class="nav-item">
+							<a class="nav-link" href="{{ url('/sobremi')}}">Sobre mi</a>
+					  	</li>
+					  	<li class="nav-item">
+							<a class="nav-link" href="{{ url('/contacto')}}">Contacto</a>
+					  	</li>
+					  
+					</ul>
+				  </div>
+				</div>
+			  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- 
+
 			<header class="header">
 				<div class="header_overlay"></div>
 				<div class="header_content d-flex flex-row align-items-center justify-content-start">
@@ -96,16 +131,29 @@
 					</div>
 					<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
 					<nav class="main_nav">
-						<ul class="d-flex flex-row align-items-start justify-content-start">
-							<li><a href="{{ url('/')}}">Inicio</a></li>
-							<li><a href="{{ url('/recetas')}}">Recetas</a></li>
+						<ul class="navbar-nav">
+							<li class="nav-item"><a class="nav-link" href="{{ url('/')}}">Inicio</a></li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="{{ url('/recetas')}}"id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Recetas</a>
+								<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<li><a class="dropdown-item" href="#">Últimas Recetas</a></li>
+									<li><a class="dropdown-item" href="#">Entrantes</a></li>
+									<li><a class="dropdown-item" href="#">Primeros</a></li>
+									<li><a class="dropdown-item" href="#">Segundos</a></li>
+									<li><a class="dropdown-item" href="#">Postres</a></li>
+									<li><a class="dropdown-item" href="#">Pescados</a></li>
+									<li><a class="dropdown-item" href="#">Carnes</a></li>
+									<li><a class="dropdown-item" href="#">Pasta</a></li>
+									<li><a class="dropdown-item" href="#">Recetas Especiales</a></li>
+								</ul>
+							</li>
 							<li><a href="{{ url('/cocinamos')}}">Cocinamos</a></li>
 							<li><a href="{{ url('/blog')}}">Blog</a></li>
 							<li><a href="{{ url('/sobremi')}}">Sobre mi</a></li>
 							<li><a href="{{ url('/contacto')}}">Contacto</a></li>		
 						</ul>
 					</nav>
-			</header>
+			</header> --}}
 
 			@yield('contenido')
 
@@ -169,6 +217,15 @@
 			<!-- Scripts -->
 			<script src="{{ asset('js/app.js') }}" defer></script>
 			<script src="{{ asset('js/all.js') }}" defer></script>
+			<script src="{{ asset('/asset/styles/bootstrap-4.1.2/popper.js') }}" defer></script>
+		
+
+
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ 			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
+			
+			@yield('scripts')
 
 </div>
 

@@ -24,7 +24,7 @@ class AdminCategoryController extends Controller
         $this->authorize('haveaccess','category.index');
         $nombre = $request->get('nombre');
 
-        $categorias = Category::orderBy('nombre')->paginate(2);
+        $categorias = Category::orderBy('id')->paginate(15);
         return view('admin.category.index',compact('categorias'));
     }
 

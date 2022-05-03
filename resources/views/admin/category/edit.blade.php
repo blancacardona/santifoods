@@ -58,6 +58,27 @@
                         
                         
                     </div>
+                    <div class="row">
+                      <!-- /.col -->
+                      <div class="col-sm-6">
+                            <!-- checkbox -->
+        
+                            <div class="form-group">
+                            <div class="custom-control custom-switch">
+                              <input type="checkbox"  class="custom-control-input" id="slidercategoria" name="slidercategoria" 
+                                @if($cat->slidercategoria=='Si')
+                                    checked
+                                @endif
+                              >
+                              <label class="custom-control-label" for="slidercategoria">Aparece en el Slider principal</label>
+                            </div>
+                          </div>
+        
+                          </div>
+        
+                        
+        
+               </div>
                    
 
         </div>

@@ -19,7 +19,7 @@
     <div class="col-12">
       <div class="card">
         <!-- /.card-header -->
-        <div class="card-body table-responsive p-0" style="height: 300px;">  
+        <div class="card-body table-responsive p-0" >  
           @can('haveaccess','category.create')
             <a class=" m-2 float-right btn btn-primary"  href="{{ route('admin.category.create') }}">Crear</a>
           @endcan
@@ -29,6 +29,7 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Slug</th>
+                <th>Categoría Principal</th>
                 <th>Fecha creación</th>
                 <th>Fecha modificación</th>
                 <th colspan="3"></th>
@@ -42,6 +43,7 @@
                         <td> {{$categoria->id }} </td>
                         <td> {{$categoria->nombre }} </td>
                         <td> {{$categoria->slug }} </td>
+                        <td> {{$categoria->slidercategoria }} </td>
                         <td> {{$categoria->created_at }} </td>
                         <td> {{$categoria->updated_at }} </td>
 

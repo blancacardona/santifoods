@@ -104,7 +104,13 @@ Route::resource('/user', UserController::class, ['except'=>[
     'create','store']])->names('user');
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+
+
+
+Route::resource('/category', CategoryController::class)->names('category');
+Route::resource('/recipe', RecipeController::class)->names('recipe');
+
 
 
 
@@ -140,7 +146,7 @@ Route::get('/test', function() {
     // $role = Role::find(2);
     // $role->permissions()->sync([1,2]);
     // return $role->permissions;
-    
+    return view('entrantes');
     
 
 });
