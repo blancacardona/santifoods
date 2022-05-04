@@ -176,82 +176,82 @@ class webPermissionInfoSeeder extends Seeder
 
    //permission category
    $permission = Permission::create([
-       'name' => 'List category',
+       'name' => 'Listar categoria',
        'slug' => 'category.index',
-       'description' => 'A user can list category',
+       'description' => 'El usuario puede listar una categoria',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Show category',
+       'name' => 'Ver categoria',
        'slug' => 'category.show',
-       'description' => 'A user can see category',
+       'description' => 'El usuario puede ver una categoria',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Create category',
+       'name' => 'Crear categoria',
        'slug' => 'category.create',
-       'description' => 'A user can create category',
+       'description' => 'El usuario puede crear una categoria',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Edit category',
+       'name' => 'Editar categoria',
        'slug' => 'category.edit',
-       'description' => 'A user can edit category',
+       'description' => 'El usuario puede editar una categoria',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Destroy category',
+       'name' => 'Eliminar categoria',
        'slug' => 'category.destroy',
-       'description' => 'A user can destroy category',
+       'description' => 'El usuario puede eliminar una categoria',
    ]);
 
    $permission_all[] = $permission->id;
 
    //permission recipe
    $permission = Permission::create([
-       'name' => 'List recipe',
+       'name' => 'Listar receta',
        'slug' => 'recipe.index',
-       'description' => 'A user can list recipe',
+       'description' => 'El usuario puede listar una receta',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Show recipe',
+       'name' => 'Ver receta',
        'slug' => 'recipe.show',
-       'description' => 'A user can see recipe',
+       'description' => 'El usuario puede ver una receta',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Create recipe',
+       'name' => 'Crear receta',
        'slug' => 'recipe.create',
-       'description' => 'A user can create recipe',
+       'description' => 'El usuario puede crear una receta',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Edit recipe',
+       'name' => 'Editar receta',
        'slug' => 'recipe.edit',
-       'description' => 'A user can edit recipe',
+       'description' => 'El usuario puede editar una receta',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Destroy recipe',
+       'name' => 'Eliminar receta',
        'slug' => 'recipe.destroy',
-       'description' => 'A user can destroy recipe',
+       'description' => 'El usuario puede eliminar una receta',
    ]);
 
    $permission_all[] = $permission->id;
