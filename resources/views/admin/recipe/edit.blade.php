@@ -75,12 +75,9 @@
         <!-- SELECT2 EXAMPLE -->
 
 
-
-
-
         <div class="card card-info">
           <div class="card-header">
-            <h3 class="card-title">Datos de la receta</h3>
+            <h3 class="card-title">Datos de la Receta</h3>
 
           
           </div>
@@ -160,7 +157,7 @@
 
         <div class="card card-info">
             <div class="card-header">
-              <h3 class="card-title">Contenido recetas</h3>
+              <h3 class="card-title">Contenido Recetas</h3>
 
             
           </div>
@@ -345,10 +342,10 @@
                 <div class="form-group">
 
                    <a class="btn btn-danger" href="{{ route('cancelar','admin.recipe.index') }}">Cancelar</a>
-                   <input    
-                   :disabled = "deshabilitar_boton==1"
-                                 
-                  type="submit" value="Guardar" class="btn btn-primary">
+                      <input    
+                      :disabled = "deshabilitar_boton==1"
+                                    
+                      type="submit" value="Guardar" class="btn btn-primary">
                  
                 </div>
                 <!-- /.form-group -->

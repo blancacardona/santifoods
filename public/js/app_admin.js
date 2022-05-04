@@ -2191,6 +2191,122 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/admin/apiblog.js":
+/*!***************************************!*\
+  !*** ./resources/js/admin/apiblog.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
+
+var apiblog = new vue__WEBPACK_IMPORTED_MODULE_0__["default"]({
+  el: '#apiblog',
+  data: {
+    nombre: '',
+    slug: '',
+    div_mensajeslug: 'Slug Existe',
+    div_clase_slug: 'badge badge-danger',
+    div_aparecer: false,
+    deshabilitar_boton: 1
+  },
+  computed: {
+    generarSLug: function generarSLug() {
+      var _char = {
+        "á": "a",
+        "é": "e",
+        "í": "i",
+        "ó": "o",
+        "ú": "u",
+        "Á": "A",
+        "É": "E",
+        "Í": "I",
+        "Ó": "O",
+        "Ú": "U",
+        "ñ": "n",
+        "Ñ": "N",
+        " ": "-",
+        "_": "-"
+      };
+      var expr = /[áéíóúÁÉÍÓÚÑñ_ ]/g;
+      this.slug = this.nombre.trim().replace(expr, function (e) {
+        return _char[e];
+      }).toLowerCase();
+      return this.slug; //return this.nombre.trim().replace(/ /g,'-').toLowerCase()
+    }
+  },
+  methods: {
+    eliminarimagen: function eliminarimagen(imagen) {
+      Swal.fire({
+        title: '¿Estas seguro de eliminar la imagen ' + imagen.id + '?',
+        text: "¡No podrás revertir esto!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: '¡Si, Eliminar!',
+        cancelButtonText: 'Cancelar'
+      }).then(function (result) {
+        if (result.value) {
+          var url = '/api/eliminarimagen/' + imagen.id;
+          axios["delete"](url).then(function (response) {
+            console.log(response.data);
+          }); //eliminar el elemento
+
+          var elemento = document.getElementById('idimagen-' + imagen.id);
+          elemento.parentNode.removeChild(elemento);
+          Swal.fire('¡Eliminado!', 'Su archivo ha sido eliminado.', 'success');
+        }
+      });
+    },
+    getBlog: function getBlog() {
+      var _this = this;
+
+      if (this.slug) {
+        var url = '/api/blog/' + this.slug;
+        axios.get(url).then(function (response) {
+          _this.div_mensajeslug = response.data;
+
+          if (_this.div_mensajeslug === "Slug Disponible") {
+            _this.div_clase_slug = 'badge badge-success';
+            _this.deshabilitar_boton = 0;
+          } else {
+            _this.div_clase_slug = 'badge badge-danger';
+            _this.deshabilitar_boton = 1;
+          }
+
+          _this.div_aparecer = true;
+
+          if (data.datos.nombre) {
+            if (data.datos.nombre === _this.nombre) {
+              _this.deshabilitar_boton = 0;
+              _this.div_mensajeslug = '';
+              _this.div_clase_slug = '';
+              _this.div_aparecer = false;
+            }
+          }
+        });
+      } else {
+        this.div_clase_slug = 'badge badge-danger';
+        this.div_mensajeslug = "Debes escribir un blog";
+        this.deshabilitar_boton = 1;
+        this.div_aparecer = true;
+      }
+    }
+  },
+  mounted: function mounted() {
+    if (data.editar == 'Si') {
+      this.nombre = data.datos.nombre;
+      this.deshabilitar_boton = 0;
+    }
+
+    console.log(data);
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/admin/apicategory.js":
 /*!*******************************************!*\
   !*** ./resources/js/admin/apicategory.js ***!
@@ -2423,6 +2539,10 @@ if (document.getElementById('apicategory')) {
 
 if (document.getElementById('apirecipe')) {
   __webpack_require__(/*! ./admin/apirecipe */ "./resources/js/admin/apirecipe.js");
+}
+
+if (document.getElementById('apiblog')) {
+  __webpack_require__(/*! ./admin/apiblog */ "./resources/js/admin/apiblog.js");
 }
 
 if (document.getElementById('confirmareliminar')) {

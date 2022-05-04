@@ -70,41 +70,41 @@ class webPermissionInfoSeeder extends Seeder
    
    //permission role
    $permission = Permission::create([
-       'name' => 'List role',
+       'name' => 'Listar rol',
        'slug' => 'role.index',
-       'description' => 'A user can list role',
+       'description' => 'El usuario puede listar un rol',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Show role',
+       'name' => 'Ver rol',
        'slug' => 'role.show',
-       'description' => 'A user can see role',
+       'description' => 'El usuario puede ver un rol',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Create role',
+       'name' => 'Crear rol',
        'slug' => 'role.create',
-       'description' => 'A user can create role',
+       'description' => 'El usuario puede crear un rol',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Edit role',
+       'name' => 'Editar rol',
        'slug' => 'role.edit',
-       'description' => 'A user can edit role',
+       'description' => 'El usuario puede editar un role',
    ]);
 
    $permission_all[] = $permission->id;
            
    $permission = Permission::create([
-       'name' => 'Destroy role',
+       'name' => 'Eliminar rol',
        'slug' => 'role.destroy',
-       'description' => 'A user can destroy role',
+       'description' => 'El usuario puede eliminar un rol',
    ]);
 
    $permission_all[] = $permission->id;
@@ -114,33 +114,33 @@ class webPermissionInfoSeeder extends Seeder
 
    //permission user
    $permission = Permission::create([
-       'name' => 'List user',
+       'name' => 'Listar usuario',
        'slug' => 'user.index',
-       'description' => 'A user can list user',
+       'description' => 'El usuario puede listar un usuario',
    ]);
    
    $permission_all[] = $permission->id;
    
    $permission = Permission::create([
-       'name' => 'Show user',
+       'name' => 'Ver usuario',
        'slug' => 'user.show',
-       'description' => 'A user can see user',
+       'description' => 'El usuario puede ver un usuario',
    ]);        
    
    $permission_all[] = $permission->id;
    
    $permission = Permission::create([
-       'name' => 'Edit user',
+       'name' => 'Editar usuario',
        'slug' => 'user.edit',
-       'description' => 'A user can edit user',
+       'description' => 'El usuario puede editar un usuario',
    ]);
    
    $permission_all[] = $permission->id;
    
    $permission = Permission::create([
-       'name' => 'Destroy user',
+       'name' => 'Eliminar usuario',
        'slug' => 'user.destroy',
-       'description' => 'A user can destroy user',
+       'description' => 'El usuario puede eliminar un usuario',
    ]);
    
    $permission_all[] = $permission->id;
@@ -148,31 +148,19 @@ class webPermissionInfoSeeder extends Seeder
 
    //new
    $permission = Permission::create([
-       'name' => 'Show own user',
+       'name' => 'Ver propio usuario',
        'slug' => 'userown.show',
-       'description' => 'A user can see own user',
+       'description' => 'El usuario puede ver su propio usuario',
    ]);        
    
    $permission_all[] = $permission->id;
    
    $permission = Permission::create([
-       'name' => 'Edit own user',
+       'name' => 'Editar propio usuario',
        'slug' => 'userown.edit',
-       'description' => 'A user can edit own user',
+       'description' => 'El usuario puede editar su propio usuario',
    ]);
    
-   
-//    $permission = Permission::create([
-//        'name' => 'Create user',
-//        'slug' => 'user.create',
-//        'description' => 'A user can create user',
-//    ]);
-   
-//    $permission_all[] = $permission->id;
-   
-   
-//    //table permission_role
-//    $roladmin->permissions()->sync( $permission_all);
 
    //permission category
    $permission = Permission::create([
@@ -255,6 +243,49 @@ class webPermissionInfoSeeder extends Seeder
    ]);
 
    $permission_all[] = $permission->id;
+
+
+
+    //permission blog
+    $permission = Permission::create([
+        'name' => 'Listar Blog',
+        'slug' => 'blog.index',
+        'description' => 'El usuario puede listar un blog',
+    ]);
+ 
+    $permission_all[] = $permission->id;
+            
+    $permission = Permission::create([
+        'name' => 'Ver Blog',
+        'slug' => 'blog.show',
+        'description' => 'El usuario puede ver un blog',
+    ]);
+ 
+    $permission_all[] = $permission->id;
+            
+    $permission = Permission::create([
+        'name' => 'Crear Blog',
+        'slug' => 'blog.create',
+        'description' => 'El usuario puede crear un blog',
+    ]);
+ 
+    $permission_all[] = $permission->id;
+            
+    $permission = Permission::create([
+        'name' => 'Editar Blog',
+        'slug' => 'blog.edit',
+        'description' => 'El usuario puede editar un blog',
+    ]);
+ 
+    $permission_all[] = $permission->id;
+            
+    $permission = Permission::create([
+        'name' => 'Eliminar Blog',
+        'slug' => 'blog.destroy',
+        'description' => 'El usuario puede eliminar un blog',
+    ]);
+ 
+    $permission_all[] = $permission->id;
 
 
    

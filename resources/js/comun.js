@@ -21,6 +21,10 @@ if (document.getElementById('apirecipe')) {
     require('./admin/apirecipe');
 }
 
+if (document.getElementById('apiblog')) {
+    require('./admin/apiblog');
+}
+
 if (document.getElementById('confirmareliminar')) {
     require('./confirmareliminar');
 }

@@ -2,6 +2,7 @@
 
 use App\Models\Recipe;
 use App\Models\Category;
+use App\Models\Blog;
 use App\Models\Image;
 
 use Illuminate\Support\Facades\Route;
@@ -9,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminRecipeController;
+use App\Http\Controllers\Admin\AdminBlogController;
 
 use App\Models\User;
 use App\Models\WebPermission\Models\Role;
@@ -90,6 +92,7 @@ Route::get('/admin', function () {
 
 Route::resource('admin/category', AdminCategoryController::class)->names('admin.category');
 Route::resource('admin/recipe', AdminRecipeController::class)->names('admin.recipe');
+Route::resource('admin/blog', AdminBlogController::class)->names('admin.blog');
 
 
 Route::get('cancelar/{ruta}', function($ruta) {
@@ -110,6 +113,7 @@ Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->nam
 
 Route::resource('/category', CategoryController::class)->names('category');
 Route::resource('/recipe', RecipeController::class)->names('recipe');
+
 
 
 

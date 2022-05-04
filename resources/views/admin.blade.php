@@ -190,6 +190,36 @@
             </li>
           @endcan
 
+          @can('haveaccess','blog.index')
+          <!-- Blogs -->
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-list-alt"></i>
+                <p>
+                  Blogs
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{{ route('admin.blog.index')}}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Listado de Blogs</p>
+                  </a>
+                </li>
+                @can('haveaccess','blog.create')
+                  <li class="nav-item">
+                    <a href="{{ route('admin.blog.create')}}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Crear Blog</p>
+                    </a>
+                  </li>
+                @endcan
+             
+              </ul>
+            </li>
+          @endcan
+
           @can('haveaccess','role.index')
           <!-- Roles -->
               <li class="nav-item has-treeview">
