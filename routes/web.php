@@ -113,6 +113,7 @@ Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->nam
 
 Route::resource('/category', CategoryController::class)->names('category');
 Route::resource('/recipe', RecipeController::class)->names('recipe');
+Route::resource('/blog', BlogController::class)->names('blog');
 
 
 

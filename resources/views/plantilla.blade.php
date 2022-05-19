@@ -36,17 +36,17 @@
 <div id='app'>
 		<!-- Menu -->
 
-		<div class="menu">
+		{{-- <div class="menu">
 
 
 			<div class="menu_contact">
 				<div class="menu_phone d-flex flex-row align-items-center justify-content-start">
-					{{-- <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li> --}}
+					<li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 					<button type="button" class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></button> 
 				</div>
 				
 			</div>
-		</div>
+		</div> --}}
 
 		<div class="super_container">
 
@@ -65,7 +65,7 @@
 						</li>
 					 	<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="{{route('category.index')}}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-							Recetas
+								Recetas
 							</a>
 							<ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" href="{{ url('/recetas')}}">Últimas Recetas</a></li>
@@ -91,6 +91,10 @@
 					  	<li class="nav-item">
 							<a class="nav-link" href="{{ url('/contacto')}}">Contacto</a>
 					  	</li>
+						<div class="menu_phone d-flex flex-row align-items-center justify-content-start">
+							{{-- <li><a href="#"><i class="fa fa-instagram float-right" aria-hidden="true"></i></a></li> --}}
+							<button type="button" class="btn btn-social-icon btn-instagram float-right"><i class="fa fa-instagram"></i></button> 
+						</div>
 					  
 					</ul>
 				  </div>
@@ -160,7 +164,6 @@
 				<!-- Footer -->
 
 				<footer class="footer">
-					<div class="footer_content">
 
 						<div class="footer_newsletter">
 							@if (\Session::has('success'))
@@ -190,25 +193,25 @@
 				
 
 
-						<div class="footer_social">
+						<div class="template-demo">
 							
-							<ul class="footer_social_list">
-								<div class="template-demo"> 
+							{{-- <ul class="footer_social_list"> --}}
+								{{-- <div class="template-demo">  --}}
 									<div class="correo-santifoods">santifood11@gmail.com</div>
 									<a href="{{ url('/sobremi')}}" class="link-sobremi" style="color: black">
 										Sobre mi
 									<br><br>
 									<button type="button" class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></button> 
-								</div>
+								{{-- </div> --}}
 								
-							</ul>
+							{{-- </ul> --}}
 						</div>
 					
 						<div class="footer_copyright">
 							<div class="copyright order-md-1 order-2"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-			Copyright &copy;<script>document.write(new Date().getFullYear());</script>  SANTIFOODS
-											</div>
-										</div>
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script>  SANTIFOODS
+							</div>
+						</div>
 				</footer>
 		</div>
 

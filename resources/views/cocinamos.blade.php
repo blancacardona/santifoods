@@ -4,7 +4,7 @@
 @section('contenido')
 
 <div class="cocinamos-super-container">
-  <div class="cocinamos-title">¡COCINAMOS!</div>
+  <div class="page-title">¡COCINAMOS!</div>
   <div class="cocinamos-descripcion">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   </div>
@@ -17,11 +17,11 @@
   </a>
   {{-- <button class="cocinamos-container2" href="{{ url('/showcooking/teambuilding')}}"> --}}
   <a href="{{ url('/cocinamos/teambuilding')}}" class="cocinamos-container1">
-    <div class="cocinamos-container-image" style="background-image:url(http://localhost:8000/asset/images/0019txokojaieneahd.jpg)"></div>
+    <div class="cocinamos-container-image" style="background-image:url(http://localhost:8000/asset/images/0038txokojaieneahd.jpg)"></div>
     <div class="cocinamos-container1-title">TEAM BUILDING</div>
   </a>
   <a href="{{ url('/cocinamos/chefencasa')}}" class="cocinamos-container1">
-    <div class="cocinamos-container-image" style="background-image:url(http://localhost:8000/asset/images/0019txokojaieneahd.jpg)"></div>
+    <div class="cocinamos-container-image" style="background-image:url(http://localhost:8000/asset/images/0052txokojaieneahd.jpg)"></div>
     <div class="cocinamos-container1-title">CHEF EN CASA</div>
   </a>
 

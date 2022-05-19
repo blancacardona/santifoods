@@ -1,4 +1,10 @@
-
+.page-title{
+	font-size: 50px;
+	padding-top: 130px;
+	padding-bottom: 40px;
+	text-align: center;
+	color: #745f2e;
+}
 
 p
 {
@@ -17,16 +23,24 @@ p
 *********************************/
 
 
-.footer_content{
+.footer_social{
+	text-align: center;
+	align-content: center;
+	/* background-color: #F6E6BA; */
+	padding: 20px;
+	background-color: #F3E0AD;
+	margin-top: 100px;
+}
+
+.footer_newsletter{
 	text-align: center;
 	align-content: center;
 	/* background-color: #F6E6BA; */
 	padding: 20px;
 	background-color: #A3F9CE;
 	margin-top: 100px;
-	
-
 }
+
 .footer_title
 {
 	font-size: 20px;
@@ -105,5 +119,8 @@ p
 	font-weight: 300;
 	text-align: center;
 	font-style: oblique;
+	background-color: #EFE4C5;
+	padding-top: 5px;
+	padding-bottom: 5px;
 
 } 
