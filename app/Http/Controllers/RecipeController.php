@@ -40,9 +40,8 @@ class RecipeController extends Controller
     public function show($slug)
     {
 
-        $receta = Recipe::where('category_id',$categoria)->firstOrFail();
-        $categoria = Category::orderBy('nombre')->get();
-        return view('recipe.show',compact('receta','categoria'));
+        $recipe = Recipe::with('images')->where('slug',$slug)->firstOrFail();
+        return view('recipe.show',compact('recipe'));
         
     }
 

@@ -63,7 +63,7 @@
 						<li class="nav-item">
 							<a class="nav-link" href="{{ url('/')}}">Inicio</a>
 						</li>
-					 	<li class="nav-item dropdown">
+					 	{{-- <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="{{route('category.index')}}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 								Recetas
 							</a>
@@ -78,6 +78,9 @@
 								<li><a class="dropdown-item" href="#">Pasta</a></li>
 								<li><a class="dropdown-item" href="#">Recetas Especiales</a></li>
 							</ul>
+					  	</li> --}}
+						<li class="nav-item">
+							<a class="nav-link" href="{{ url('/category')}}">Recetas</a>
 					  	</li>
 					  	<li class="nav-item">
 							<a class="nav-link" href="{{ url('/cocinamos')}}">Cocinamos</a>
@@ -88,12 +91,12 @@
 					  	<li class="nav-item">
 							<a class="nav-link" href="{{ url('/sobremi')}}">Sobre mi</a>
 					  	</li>
-					  	<li class="nav-item">
-							<a class="nav-link" href="{{ url('/contacto')}}">Contacto</a>
-					  	</li>
-						<div class="menu_phone d-flex flex-row align-items-center justify-content-start">
+					  
+						<div class="menu_phone d-flex flex-row align-items-center justify-content-end float-right">
 							{{-- <li><a href="#"><i class="fa fa-instagram float-right" aria-hidden="true"></i></a></li> --}}
-							<button type="button" class="btn btn-social-icon btn-instagram float-right"><i class="fa fa-instagram"></i></button> 
+							<a href="https://www.instagram.com/santifoods/">
+								<button type="button" class="btn btn-social-icon btn-instagram"><i class="fa fa-instagram"></i></button> 
+							</a>	
 						</div>
 					  
 					</ul>
